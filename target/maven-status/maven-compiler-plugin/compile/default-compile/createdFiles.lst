@@ -1,0 +1,6 @@
+com/netease/kaola/entity/Product.class
+com/netease/kaola/entity/Seller.class
+com/netease/kaola/controller/ProductController.class
+com/netease/kaola/service/ProductBiz.class
+com/netease/kaola/service/impl/ProductBizImpl.class
+com/netease/kaola/dao/ProductDao.class

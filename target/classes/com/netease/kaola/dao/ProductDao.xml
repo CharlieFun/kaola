@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.netease.kaola.dao.ProductDao">
+    <resultMap id="productMap" type="Product">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="desc" column="description"/>
+        <result property="detail" column="detail"/>
+        <result property="price" column="price"/>
+        <result property="imgPath" column="img_path"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+    <insert id="add" parameterType="com.netease.kaola.entity.Product">
+        INSERT INTO product (title, description, detail, price, img_path, status)
+        VALUES (#{title}, #{desc}, #{detail}, #{price}, #{imgPath}, #{status})
+    </insert>
+
+
+</mapper>

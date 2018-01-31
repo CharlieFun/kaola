@@ -1,0 +1,81 @@
+package com.netease.kaola.service.impl;
+
+import com.netease.kaola.dao.ProductDao;
+import com.netease.kaola.entity.Product;
+import com.netease.kaola.service.ProductBiz;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
+/**
+ * Created by funstar on 2018/1/26.
+ */
+@Service
+public class ProductBizImpl implements ProductBiz, InitializingBean {
+    public static final Logger LOGGER = LoggerFactory.getLogger(ProductBizImpl.class);
+    private Set<String> fileTypes;
+
+    @Autowired
+    private ProductDao productDao;
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        fileTypes = new HashSet<>();
+        fileTypes.add("png");
+        fileTypes.add("jpg");
+        fileTypes.add("jpeg");
+        fileTypes.add("bmp");
+    }
+
+    @Transactional
+    @Override
+    public boolean add(Product product, MultipartFile file, String path) {
+        if (file.getSize() != 0) {
+            String originalFileName = file.getOriginalFilename();
+            int index = originalFileName.lastIndexOf(".");
+            if (index == -1) {
+                return false;
+            }
+            String fileType = originalFileName.substring(index + 1);
+            if (!fileTypes.contains(fileType)) {
+                return false;
+            }
+            StringBuffer sb = new StringBuffer();
+            sb.append(path);
+            sb.append("/");
+            //用UUID给文件随机命名
+            sb.append(UUID.randomUUID());
+            sb.append(".");
+            sb.append(fileType);
+            String absolutePath = sb.toString();
+            LOGGER.info("absolute path:" + absolutePath);
+            File destFile = new File(absolutePath);
+            if (!destFile.exists()) {
+                destFile.mkdirs();
+            }
+            product.setImgPath(absolutePath);
+            try {
+                file.transferTo(destFile);
+            } catch (IOException e) {
+                LOGGER.error("图片保存失败", e);
+                product.setImgPath("未保存");
+            }
+        } else {
+            product.setImgPath("/");
+        }
+        //添加商品时默认是上架的
+        product.setStatus(true);
+        productDao.add(product);
+        return true;
+    }
+}

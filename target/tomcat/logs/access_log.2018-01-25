@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [25/Jan/2018:16:32:19 +0800] "GET /seller/ HTTP/1.1" 404 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [25/Jan/2018:16:32:28 +0800] "GET /kaola/seller/ HTTP/1.1" 200 25 http-bio-8080-exec-2 65
+0:0:0:0:0:0:0:1 - - [25/Jan/2018:16:34:24 +0800] "GET /kaola/seller/ HTTP/1.1" 404 977 http-bio-8080-exec-1 94
+0:0:0:0:0:0:0:1 - - [25/Jan/2018:16:34:28 +0800] "GET /seller/ HTTP/1.1" 200 25 http-bio-8080-exec-2 33
+0:0:0:0:0:0:0:1 - - [25/Jan/2018:20:23:55 +0800] "GET /product/add_view HTTP/1.1" 404 983 http-bio-8080-exec-1 61
+0:0:0:0:0:0:0:1 - - [25/Jan/2018:20:25:10 +0800] "GET /product/addView HTTP/1.1" 500 4848 http-bio-8080-exec-3 355
+0:0:0:0:0:0:0:1 - - [25/Jan/2018:20:30:02 +0800] "GET /product/addView HTTP/1.1" 500 4848 http-bio-8080-exec-1 785
+0:0:0:0:0:0:0:1 - - [25/Jan/2018:20:30:15 +0800] "GET /spec/view HTTP/1.1" 404 969 http-bio-8080-exec-7 22
