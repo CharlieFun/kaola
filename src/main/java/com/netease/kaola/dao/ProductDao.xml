@@ -7,14 +7,27 @@
         <result property="summary" column="summary"/>
         <result property="detail" column="detail"/>
         <result property="price" column="price"/>
-        <result property="imgPath" column="img_path"/>
+        <result property="imgData" column="img_data"/>
         <result property="status" column="status"/>
     </resultMap>
 
+    <resultMap id="imgMap" type="java.util.Map">
+        <result property="imgData" column="img_data" jdbcType="BLOB"
+                typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
+    </resultMap>
+
     <insert id="add" parameterType="com.netease.kaola.entity.Product">
-        INSERT INTO product (title, summary, detail, price, img_path, status)
-        VALUES (#{title}, #{summary}, #{detail}, #{price}, #{imgPath}, #{status})
+        INSERT INTO product (title, summary, detail, price, img_data, status)
+        VALUES (#{title}, #{summary}, #{detail}, #{price}, #{imgData}, #{status})
     </insert>
+
+    <select id="findAll" resultMap="productMap">
+        SELECT id,title,summary,detail,price,status FROM product
+    </select>
+
+    <select id="getImgDataById" resultMap="imgMap">
+        SELECT img_data FROM product WHERE id = #{id}
+    </select>
 
 
 </mapper>

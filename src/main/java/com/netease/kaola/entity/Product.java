@@ -13,8 +13,8 @@ public class Product {
     private String detail;
     //价格
     private Double price;
-    //图片路径
-    private String imgPath;
+    //图片
+    private byte[] imgData;
     //是否上架
     private boolean status;
 
@@ -66,11 +66,11 @@ public class Product {
         this.status = status;
     }
 
-    public String getImgPath() {
-        return imgPath;
+    public byte[] getImgData() {
+        return imgData;
     }
 
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
+    public void setImgData(byte[] imgData) {
+        this.imgData = imgData;
     }
 }

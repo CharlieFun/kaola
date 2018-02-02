@@ -24,11 +24,12 @@
                                 <label>商品标题</label>
                                 <input class="form-control" name="title">
                                 <label>商品简介</label>
-                                <input class="form-control" name="desc">
+                                <input class="form-control" name="summary">
                                 <label>商品价格</label>
                                 <input class="form-control" name="price">
                                 <label>详细描述</label>
-                                <input class="form-control" name="detail">
+                                <%--<input class="form-control" name="detail">--%>
+                                <textarea class="form-control" name="detail"></textarea>
                                 <label>添加照片</label>
                                 <input name="file" type="file">
                                 <label></label>

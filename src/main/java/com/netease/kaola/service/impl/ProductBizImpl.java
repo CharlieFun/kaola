@@ -8,14 +8,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by funstar on 2018/1/26.
@@ -37,9 +36,51 @@ public class ProductBizImpl implements ProductBiz, InitializingBean {
         fileTypes.add("bmp");
     }
 
+//    @Transactional
+//    @Override
+//    public boolean add(Product product, MultipartFile file, String path) {
+//        if (file.getSize() != 0) {
+//            String originalFileName = file.getOriginalFilename();
+//            int index = originalFileName.lastIndexOf(".");
+//            if (index == -1) {
+//                return false;
+//            }
+//            String fileType = originalFileName.substring(index + 1);
+//            if (!fileTypes.contains(fileType)) {
+//                return false;
+//            }
+//            StringBuffer sb = new StringBuffer();
+//            sb.append(path);
+//            sb.append("/");
+//            //用UUID给文件随机命名
+//            sb.append(UUID.randomUUID());
+//            sb.append(".");
+//            sb.append(fileType);
+//            String absolutePath = sb.toString();
+//            LOGGER.info("absolute path:" + absolutePath);
+//            File destFile = new File(absolutePath);
+//            if (!destFile.exists()) {
+//                destFile.mkdirs();
+//            }
+//            product.setImgPath(absolutePath);
+//            try {
+//                file.transferTo(destFile);
+//            } catch (IOException e) {
+//                LOGGER.error("图片保存失败", e);
+//                product.setImgPath("未保存");
+//            }
+//        } else {
+//            product.setImgPath("/");
+//        }
+//        //添加商品时默认是上架的
+//        product.setStatus(true);
+//        productDao.add(product);
+//        return true;
+//    }
+
     @Transactional
     @Override
-    public boolean add(Product product, MultipartFile file, String path) {
+    public boolean add(Product product, MultipartFile file) {
         if (file.getSize() != 0) {
             String originalFileName = file.getOriginalFilename();
             int index = originalFileName.lastIndexOf(".");
@@ -51,31 +92,33 @@ public class ProductBizImpl implements ProductBiz, InitializingBean {
                 return false;
             }
             StringBuffer sb = new StringBuffer();
-            sb.append(path);
-            sb.append("/");
             //用UUID给文件随机命名
             sb.append(UUID.randomUUID());
             sb.append(".");
             sb.append(fileType);
-            String absolutePath = sb.toString();
-            LOGGER.info("absolute path:" + absolutePath);
-            File destFile = new File(absolutePath);
-            if (!destFile.exists()) {
-                destFile.mkdirs();
-            }
-            product.setImgPath(absolutePath);
+            String newFileName = sb.toString();
+            LOGGER.info("absolute path:" + newFileName);
             try {
-                file.transferTo(destFile);
+                product.setImgData(file.getBytes());
             } catch (IOException e) {
-                LOGGER.error("图片保存失败", e);
-                product.setImgPath("未保存");
+                LOGGER.info("图片存储失败", e);
             }
-        } else {
-            product.setImgPath("/");
         }
         //添加商品时默认是上架的
         product.setStatus(true);
         productDao.add(product);
         return true;
+    }
+
+    @Override
+    public List<Product> findAll() {
+        return productDao.findAll();
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
+    public byte[] getImgDataById(Long id) {
+        Map<String, Object> map = productDao.getImgDataById(id);
+        return (byte[]) map.get("imgData");
     }
 }

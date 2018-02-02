@@ -27,29 +27,29 @@
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="15" parent="11" name="description">
-      <Position>3</Position>
-      <DataType>varchar(100)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="16" parent="11" name="detail">
+    <column id="15" parent="11" name="detail">
       <Position>4</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="17" parent="11" name="price">
+    <column id="16" parent="11" name="price">
       <Position>5</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="18" parent="11" name="img_path">
-      <Position>6</Position>
+    <column id="17" parent="11" name="status">
+      <Position>7</Position>
+      <DataType>tinyint(4)|0</DataType>
+    </column>
+    <column id="18" parent="11" name="summary">
+      <Position>3</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="11" name="status">
-      <Position>7</Position>
-      <DataType>tinyint(4)|0</DataType>
+    <column id="19" parent="11" name="img_data">
+      <Position>6</Position>
+      <DataType>mediumblob|0</DataType>
+      <NotNull>1</NotNull>
     </column>
     <key id="20" parent="11" name="PRIMARY">
       <ColNames>id</ColNames>

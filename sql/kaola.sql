@@ -22,7 +22,7 @@ create table product(
   summary varchar(100) not null,
   detail text not null,
   price double not null,
-  img_path varchar(100) not null,
+  img_data mediumblob not null,
   status tinyint,
   constraint pk_product primary key(id)
 ) ENGINE=InnoDB charset=utf8;
