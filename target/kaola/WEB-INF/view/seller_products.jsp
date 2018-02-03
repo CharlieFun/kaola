@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="/nav.jsp"></jsp:include>
+<link href="${pageContext.request.contextPath}/dist/css/ui.css"
+      rel="stylesheet" type="text/css">
 <script src=""></script>
 <!-- Page Content -->
 <div id="page-wrapper">
@@ -10,7 +12,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        班级信息
+                        <a href="${pageContext.request.contextPath}/product/addView" class="btn btn-primary" role="button">添加商品</a>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -19,9 +21,13 @@
 
                                 <thead>
                                 <tr>
-                                    <th>商品编号</th>
+                                    <th>ID</th>
+                                    <th>缩略图</th>
                                     <th>商品名称</th>
-                                    <th>商品图片</th>
+                                    <th>描述</th>
+                                    <th>单价</th>
+                                    <th>发布状态</th>
+                                    <th>操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -29,9 +35,16 @@
                                 <c:forEach var="product" items="${products}">
                                     <tr>
                                         <td>${product.id}</td>
-                                        <td>${product.title}</td>
                                         <td>
-                                            <img src="/product/showImg?id=${product.id}">
+                                            <img class="small" src="/product/showImg?id=${product.id}">
+                                        </td>
+                                        <td>${product.title}</td>
+                                        <td>${product.summary}</td>
+                                        <td>${product.price}</td>
+                                        <td>${product.status}</td>
+                                        <td>
+                                            <a href="${pageContext.request.contextPath}/product/updateView" class="btn btn-primary" role="button" type="Edit">修改</a>
+                                            <button href="${pageContext.request.contextPath}/product/delete"  class="btn-danger" name="delete" id="${product.id}" onclick="return confirm('是否要删除该商品？')">删除</button>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -51,7 +64,6 @@
         <%--</c:forEach>--%>
 
     </div>
-    <a href="${pageContext.request.contextPath}/clazz/add_view" class="btn btn-primary" role="button">添加班级</a>
     <!-- /.container-fluid -->
 </div>
 </div>

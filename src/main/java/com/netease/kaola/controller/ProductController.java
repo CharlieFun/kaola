@@ -43,6 +43,8 @@ public class ProductController {
         return "redirect:/seller";
     }
 
+
+
     @RequestMapping("/showImg")
     public void showImg(@Param("id") Long id, HttpServletResponse response) {
         byte[] imgData = productBiz.getImgDataById(id);
