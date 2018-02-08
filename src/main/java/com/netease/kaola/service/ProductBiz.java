@@ -12,7 +12,14 @@ import java.util.List;
 public interface ProductBiz {
     boolean add(Product product, MultipartFile file);
 
+    void update(Product product, MultipartFile file);
+
+    void delete(Long id);
+
     List<Product> findAll();
 
     byte[] getImgDataById(Long id);
+
+    Product getProductById(Long id);
+
 }

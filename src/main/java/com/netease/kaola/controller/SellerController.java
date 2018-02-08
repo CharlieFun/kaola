@@ -31,7 +31,7 @@ public class SellerController {
         return res;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("")
     public String showProducts(Model model){
         model.addAttribute("products",productBiz.findAll());
         return "seller_products";

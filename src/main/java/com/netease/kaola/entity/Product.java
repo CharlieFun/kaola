@@ -73,4 +73,16 @@ public class Product {
     public void setImgData(byte[] imgData) {
         this.imgData = imgData;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", summary='" + summary + '\'' +
+                ", detail='" + detail + '\'' +
+                ", price=" + price +
+                ", status=" + status +
+                "}";
+    }
 }

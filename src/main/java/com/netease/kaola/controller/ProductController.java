@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,7 +23,7 @@ import java.io.OutputStream;
  * Created by funstar on 2018/1/25.
  */
 @Controller
-@RequestMapping("product")
+@RequestMapping("/product")
 public class ProductController {
     public static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
     @Autowired
@@ -43,7 +44,24 @@ public class ProductController {
         return "redirect:/seller";
     }
 
+    @RequestMapping("/updateView")
+    public String updateView(@Param("id") Long id, Model model) {
+        model.addAttribute("product", productBiz.getProductById(id));
+        return "product_update";
+    }
 
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(Product product, MultipartFile file) {
+        LOGGER.info(product.toString());
+        productBiz.update(product, file);
+        return "redirect:/seller";
+    }
+
+    @RequestMapping("/delete")
+    public String delete(@Param("id") Long id) {
+        productBiz.delete(id);
+        return "redirect:/seller";
+    }
 
     @RequestMapping("/showImg")
     public void showImg(@Param("id") Long id, HttpServletResponse response) {

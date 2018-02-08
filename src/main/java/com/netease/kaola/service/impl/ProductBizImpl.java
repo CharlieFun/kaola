@@ -97,7 +97,7 @@ public class ProductBizImpl implements ProductBiz, InitializingBean {
             sb.append(".");
             sb.append(fileType);
             String newFileName = sb.toString();
-            LOGGER.info("absolute path:" + newFileName);
+            LOGGER.info("newFileName:" + newFileName);
             try {
                 product.setImgData(file.getBytes());
             } catch (IOException e) {
@@ -111,6 +111,32 @@ public class ProductBizImpl implements ProductBiz, InitializingBean {
     }
 
     @Override
+    public void update(Product product, MultipartFile file) {
+        if (file.getSize() != 0) {
+            String originalFileName = file.getOriginalFilename();
+            int index = originalFileName.lastIndexOf(".");
+            if (index != -1) {
+                String fileType = originalFileName.substring(index + 1);
+                if (fileTypes.contains(fileType)) {
+                    try {
+                        product.setImgData(file.getBytes());
+                        productDao.update(product);
+                    } catch (IOException e) {
+                        LOGGER.info("图片存储失败", e);
+                    }
+                }
+            }
+        } else {
+            productDao.updateWithoutImg(product);
+        }
+    }
+
+    @Override
+    public void delete(Long id) {
+        productDao.delete(id);
+    }
+
+    @Override
     public List<Product> findAll() {
         return productDao.findAll();
     }
@@ -120,5 +146,10 @@ public class ProductBizImpl implements ProductBiz, InitializingBean {
     public byte[] getImgDataById(Long id) {
         Map<String, Object> map = productDao.getImgDataById(id);
         return (byte[]) map.get("imgData");
+    }
+
+    @Override
+    public Product getProductById(Long id) {
+        return productDao.getProductById(id);
     }
 }

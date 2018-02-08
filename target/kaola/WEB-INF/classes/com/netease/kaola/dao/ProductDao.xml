@@ -16,17 +16,44 @@
                 typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
     </resultMap>
 
-    <insert id="add" parameterType="com.netease.kaola.entity.Product">
+    <resultMap id="productWithoutImgMap" type="Product">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="summary" column="summary"/>
+        <result property="detail" column="detail"/>
+        <result property="price" column="price"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+    <insert id="add" parameterType="Product">
         INSERT INTO product (title, summary, detail, price, img_data, status)
         VALUES (#{title}, #{summary}, #{detail}, #{price}, #{imgData}, #{status})
     </insert>
 
-    <select id="findAll" resultMap="productMap">
-        SELECT id,title,summary,detail,price,status FROM product
+    <update id="updateWithoutImg" parameterType="Product">
+        UPDATE product SET title = #{title}, summary = #{summary}, detail = #{detail},
+        price = #{price}, status = #{status} WHERE id = #{id}
+    </update>
+
+    <update id="update" parameterType="Product">
+        UPDATE product SET title = #{title}, summary = #{summary}, detail = #{detail},
+            price = #{price}, img_data = #{imgData}, status = #{status} WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="long">
+        DELETE FROM product WHERE id = #{id}
+    </delete>
+
+    <select id="findAll" resultMap="productWithoutImgMap">
+        SELECT * FROM product
     </select>
 
     <select id="getImgDataById" resultMap="imgMap">
         SELECT img_data FROM product WHERE id = #{id}
+    </select>
+
+    <select id="getProductById" resultMap="productWithoutImgMap">
+        SELECT * FROM product WHERE id=#{id}
     </select>
 
 

@@ -12,7 +12,8 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="${pageContext.request.contextPath}/product/addView" class="btn btn-primary" role="button">添加商品</a>
+                        <a href="${pageContext.request.contextPath}/product/addView" class="btn btn-primary"
+                           role="button">添加商品</a>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -43,8 +44,11 @@
                                         <td>${product.price}</td>
                                         <td>${product.status}</td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/product/updateView" class="btn btn-primary" role="button" type="Edit">修改</a>
-                                            <button href="${pageContext.request.contextPath}/product/delete"  class="btn-danger" name="delete" id="${product.id}" onclick="return confirm('是否要删除该商品？')">删除</button>
+                                            <a href="${pageContext.request.contextPath}/product/updateView?id=${product.id}"
+                                               class="btn btn-primary" name="update">修改</a>
+                                            <a href="${pageContext.request.contextPath}/product/delete?id=${product.id}"
+                                               class="btn btn-danger" name="delete" id="${product.id}"
+                                               onclick="return confirm('是否要删除该商品？')">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
