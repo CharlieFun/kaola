@@ -9,3 +9,31 @@ img.small {
     text-align: center;
     vertical-align: middle;
 }
+
+.login-container {
+    width: 430px;
+    height: 420px;
+    position: absolute;
+    top: 190px;
+    left: 50%;
+    margin: 0 0 0 -215px;
+    z-index: 5
+}
+
+.login-panel .login-mode .register {
+    position: absolute;
+    bottom: 0;
+    right: 0
+}
+
+.login-panel .login-mode .register .register-link {
+    color:#337ab7;
+    transition: color 1s cubic-bezier(.19,1,.22,1)
+}
+
+.login-panel .login-mode {
+    text-align: left;
+    position: relative;
+    height: 32px;
+    line-height: 32px
+}

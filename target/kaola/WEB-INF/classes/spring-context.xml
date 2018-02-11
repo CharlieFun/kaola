@@ -20,6 +20,9 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <!--导入shiro相关配置-->
+    <import resource="classpath:spring-shiro.xml"/>
+
     <!--自动扫描bean,注意不要扫描@Controller注解的类-->
     <context:component-scan base-package="com.netease.kaola">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -60,14 +63,6 @@
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
-    </bean>
-
-    <!-- 定义文件解释器（文件上传） -->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <!-- 设置默认编码 -->
-        <property name="defaultEncoding" value="utf-8"></property>
-        <!-- 上传图片最大大小1M-->
-        <property name="maxUploadSize" value="1048576"></property>
     </bean>
 
     <aop:aspectj-autoproxy/>
