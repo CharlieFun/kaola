@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by funstar on 2018/2/9.
@@ -37,7 +38,7 @@ public class LoginAndRegisterController {
     }
 
     @RequestMapping(value = "login",method = RequestMethod.POST)
-    public String doLogin(User user, Model model) {
+    public String doLogin(User user, Model model, HttpSession session) {
         LOGGER.error("进入login");
         String username = user.getUsername();
         String password = user.getPassword();
@@ -59,6 +60,8 @@ public class LoginAndRegisterController {
         boolean isAuthenticated = subject.isAuthenticated();
         LOGGER.info("用户{}是否验证成功：{}", subject.getPrincipal(), isAuthenticated);
         if (isAuthenticated) {
+            String principal = (String) subject.getPrincipal();
+            session.setAttribute("username", principal);
             if (subject.hasRole("seller")) {
                 return "redirect:/seller";
             } else {

@@ -3,6 +3,8 @@ package com.netease.kaola.controller;
 import com.netease.kaola.entity.Product;
 import com.netease.kaola.service.ProductBiz;
 import org.apache.ibatis.annotations.Param;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
