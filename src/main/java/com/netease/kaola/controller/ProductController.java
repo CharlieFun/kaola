@@ -29,6 +29,12 @@ public class ProductController {
     @Autowired
     private ProductBiz productBiz;
 
+    @RequestMapping("")
+    public String showProducts(Model model) {
+        model.addAttribute("products", productBiz.findAll());
+        return "buyer_products";
+    }
+
     @RequestMapping("/addView")
     public String addView() {
         return "/product_add";

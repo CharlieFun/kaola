@@ -1,16 +1,16 @@
-img.small {
+img.smallImg {
     width: 80px;
     height: 50px;
     display: block;
     margin: 0 auto;
 }
 
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
     text-align: center;
     vertical-align: middle;
 }
 
-.login-container {
+.first-screen.login-container {
     width: 430px;
     height: 420px;
     position: absolute;
@@ -20,20 +20,21 @@ img.small {
     z-index: 5
 }
 
-.login-panel .login-mode .register {
+
+.login-mode {
+    text-align: left;
+    position: relative;
+    height: 32px;
+    line-height: 32px
+}
+
+.login-mode .register {
     position: absolute;
     bottom: 0;
     right: 0
 }
 
-.login-panel .login-mode .register .register-link {
-    color:#337ab7;
-    transition: color 1s cubic-bezier(.19,1,.22,1)
-}
-
-.login-panel .login-mode {
-    text-align: left;
-    position: relative;
-    height: 32px;
-    line-height: 32px
+.register-link {
+    color: #337ab7;
+    transition: color 1s cubic-bezier(.19, 1, .22, 1)
 }

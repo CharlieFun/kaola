@@ -2,6 +2,7 @@ package com.netease.kaola.controller;
 
 import com.google.gson.Gson;
 import com.netease.kaola.service.ProductBiz;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +32,7 @@ public class SellerController {
         return res;
     }
 
+    @RequiresRoles("seller")
     @RequestMapping("")
     public String showProducts(Model model){
         model.addAttribute("products",productBiz.findAll());

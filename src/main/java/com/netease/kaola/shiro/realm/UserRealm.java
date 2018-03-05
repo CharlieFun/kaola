@@ -12,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Set;
+
 /**
  * Created by funstar on 2018/2/8.
  */
@@ -34,9 +36,9 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException{
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String username = (String) token.getPrincipal();
-        LOGGER.info("用户名：{}",username);
+        LOGGER.info("用户名：{}", username);
         User user = userBiz.findByUsername(username);
         if (user == null) {
             //账号不存在
