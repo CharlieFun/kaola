@@ -85,4 +85,12 @@ public class LoginAndRegisterController {
         }
         return "redirect:/login";
     }
+
+    @RequestMapping(value = "/logout",method = RequestMethod.GET)
+    public String logout(Model model){
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        model.addAttribute("msg","您已经退出登录");
+        return "/login";
+    }
 }

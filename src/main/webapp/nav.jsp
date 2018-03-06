@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>桂林电子科技大学教材订购系统</title>
+    <title>网易考拉海购</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="${pageContext.request.contextPath}/bower_components/bootstrap/dist/css/bootstrap.min.css"
@@ -52,7 +52,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">桂林电子科技大学教材订购系统</a>
+            <a class="navbar-brand" href="#">网易考拉海购</a>
         </div>
         <!-- /.navbar-header -->
 
