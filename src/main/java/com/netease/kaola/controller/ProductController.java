@@ -71,6 +71,12 @@ public class ProductController {
         return "redirect:/seller";
     }
 
+    @RequestMapping("/show")
+    public String showProduct(@Param("id") Long id, Model model) {
+        model.addAttribute("product", productBiz.getProductById(id));
+        return "product_show";
+    }
+
     @RequestMapping("/showImg")
     public void showImg(@Param("id") Long id, HttpServletResponse response) {
         byte[] imgData = productBiz.getImgDataById(id);
