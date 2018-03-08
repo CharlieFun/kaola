@@ -1,5 +1,6 @@
 package com.netease.kaola.entity;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -9,10 +10,18 @@ import java.util.List;
 public class Order {
     private Long id;
     private Long userId;
-    private LocalDateTime createtime;
+    private Timestamp createtime;
 
     //订单明细
     private List<Orderdetail> orderdetails;
+
+    public Order() {
+    }
+
+    public Order(Long userId, Timestamp createtime) {
+        this.userId = userId;
+        this.createtime = createtime;
+    }
 
     public Long getId() {
         return id;
@@ -30,11 +39,11 @@ public class Order {
         this.userId = userId;
     }
 
-    public LocalDateTime getCreatetime() {
+    public Timestamp getCreatetime() {
         return createtime;
     }
 
-    public void setCreatetime(LocalDateTime createtime) {
+    public void setCreatetime(Timestamp createtime) {
         this.createtime = createtime;
     }
 

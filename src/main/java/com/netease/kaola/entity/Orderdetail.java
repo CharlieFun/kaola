@@ -19,6 +19,15 @@ public class Orderdetail {
     private String stringTime;
     private Product product;
 
+    public Orderdetail() {
+    }
+
+    public Orderdetail(Long orderId, Long productId, int amount) {
+        this.orderId = orderId;
+        this.productId = productId;
+        this.amount = amount;
+    }
+
     public Long getId() {
         return id;
     }

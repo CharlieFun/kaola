@@ -1,9 +1,13 @@
 package com.netease.kaola.controller;
 
 import com.google.gson.Gson;
+import com.netease.kaola.entity.Order;
 import com.netease.kaola.entity.Orderdetail;
+import com.netease.kaola.entity.User;
+import com.netease.kaola.service.OrderBiz;
 import com.netease.kaola.service.OrderdetailBiz;
 import com.netease.kaola.service.ProductBiz;
+import com.netease.kaola.service.UserBiz;
 import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,22 +32,34 @@ public class BuyerController {
     private Gson gson = new Gson();
     @Autowired
     private ProductBiz productBiz;
-
     @Autowired
     private OrderdetailBiz orderdetailBiz;
+    @Autowired
+    private UserBiz userBiz;
+    @Autowired
+    private OrderBiz orderBiz;
 
     @ResponseBody
     @RequestMapping(value = "/buy", method = RequestMethod.POST)
-    public String buy(@Param("id") Long id, @Param("num") int num) {
+    public String buy(@Param("productId") Long productId, @Param("num") int num, HttpSession session) {
+        LOGGER.info("购买的商品ID是：{}", productId);
+        LOGGER.info("购买数量是：{}", num);
+        String username = (String) session.getAttribute("username");
+        User user = userBiz.findByUsername(username);
+        boolean flag = orderBiz.buy(user.getId(), productId, num);
         Map<String, Integer> map = new HashMap<>();
-        map.put("code", 200);
+        if (flag) {
+            map.put("code", 200);
+        }
         String res = gson.toJson(map);
         return res;
     }
 
     @RequestMapping("/account")
     public String showAccount(HttpSession session, Model model) {
-        List<Orderdetail> orderdetails = orderdetailBiz.findAllOrderdetailsByUsername((String) session.getAttribute("username"));
+        String username = (String) session.getAttribute("username");
+        LOGGER.info("当前登录的用户名是：{}", username);
+        List<Orderdetail> orderdetails = orderdetailBiz.findAllOrderdetailsByUsername(username);
         Double account = orderdetailBiz.calculateAccount(orderdetails);
         model.addAttribute("orderdetails", orderdetails);
         model.addAttribute("account", account);

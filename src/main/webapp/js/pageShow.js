@@ -1,5 +1,5 @@
 (function (w, d, u) {
-    var productId = $("button[name='item']").attr('id');
+    var productId = $("button[name='buy']").attr('id');
     var showContent = util.get('showContent');
     if (!showContent) {
         return;
@@ -10,17 +10,21 @@
         init: function () {
             showContent.addEventListener('click', function (e) {
                 var productNum = $('allNum').textContent;
-                console.log(productNum+'+'+productId);
+               // var testId = $("button[name='buy']").at
+                //console.log(productNum+'+'+productId);
                 var ele = e.target;
                 var buy = ele && ele.dataset.buy;
                 if (buy) {
+                    //var id = productId;
+                    console.log(productNum+'+'+productId);
+                    console.log(productId);
                     layer.reset({
                         content: '确认购买本内容吗？',
                         onconfirm: function () {
                             layer.hide();
                             loading.show();
                             ajax({
-                                data: {id: productId,num:productNum},
+                                data: {productId:productId,num:productNum},
                                 url: '/buy',
                                 type: 'POST',
                                 success: function (result) {
