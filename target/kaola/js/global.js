@@ -56,7 +56,7 @@
         	xhr.open("GET", options.url + "?" + formatParams(options.data), true);
             xhr.send(null);
         }
-    }    
+    }
 
 	//layer
 	var Layer = function(){

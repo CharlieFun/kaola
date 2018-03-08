@@ -38,8 +38,14 @@
             <div class="price">
                 <span class="v-unit">¥</span><span class="v-value">${product.price}</span>
             </div>
+            <div class="num">
+                数量
+                <span id="minusNum" class="lessNum"><a>-</a></span>
+                <span id="allNum" class="totalNum">1</span>
+                <span id="plusNum" class="moreNum"><a>+</a></span>
+            </div>
             <div class="oprt f-cb">
-                <button class="u-btn u-btn-primary" data-buy="1">购 买</button>
+                <button class="u-btn u-btn-primary" data-buy="1" name="item" id="${product.id}">购 买</button>
                 <span class="u-btn u-btn-primary z-dis">已购买</span>
                 <span class="buyprice">当时购买价格：¥123.9</span>
                 <%--<a href="./edit.html" class="u-btn u-btn-primary">编 辑</a>--%>
@@ -56,7 +62,35 @@
 <div class="n-foot">
     <p>版权所有：网易云课堂<a href="http://mooc.study.163.com/smartSpec/detail/85002.htm">Java开发工程师(Web方向)</a>微专业团队</p>
 </div>
+<%-- script 节点不要使用自结束 --%>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/global.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/pageShow.js"></script>
+<script>
+    var $ = function (id) {
+        return document.getElementById(id);
+    };
+
+    $('minusNum').onclick = function (e) {
+        e = window.event || e;
+        o = e.srcElement || e.target;
+        var num = $('allNum').textContent;
+        if (num > 0) {
+            num--;
+            $('allNum').innerHTML = num;
+        } else {
+            alert("您没有购买任何商品");
+        }
+    };
+
+    $('plusNum').onclick = function (e) {
+        e = window.event || e;
+        o = e.srcElement || e.target;
+        var num = $('allNum').textContent;
+        num++;
+        $('allNum').innerHTML = num;
+    };
+
+</script>
 </body>
 </html>
