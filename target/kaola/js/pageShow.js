@@ -21,7 +21,7 @@
                             loading.show();
                             ajax({
                                 data: {id: productId,num:productNum},
-                                url: '/product/buy',
+                                url: '/buy',
                                 type: 'POST',
                                 success: function (result) {
                                     loading.result('购买成功', function () {

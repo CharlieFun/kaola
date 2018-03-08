@@ -1,5 +1,7 @@
 package com.netease.kaola.entity;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
 /**
@@ -12,7 +14,9 @@ public class Orderdetail {
     //商品数量
     private int amount;
     //购买时间
-    private LocalDateTime createtime;
+    private Timestamp createtime;
+    //格式化的日期
+    private String stringTime;
     private Product product;
 
     public Long getId() {
@@ -55,11 +59,22 @@ public class Orderdetail {
         this.product = product;
     }
 
-    public LocalDateTime getCreatetime() {
+    public Timestamp getCreatetime() {
         return createtime;
     }
 
-    public void setCreatetime(LocalDateTime createtime) {
+    public void setCreatetime(Timestamp createtime) {
         this.createtime = createtime;
+        setStringTime(createtime);
+    }
+
+    public String getStringTime() {
+        return stringTime;
+    }
+
+    public void setStringTime(Timestamp createtime) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String newTime = dateFormat.format(createtime);//将时间格式转换成符合Timestamp要求的格式.
+        this.stringTime = newTime;
     }
 }

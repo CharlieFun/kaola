@@ -111,21 +111,4 @@ public class ProductController {
         }
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/buy", method = RequestMethod.POST)
-    public String buy(@Param("id") Long id, @Param("num") int num) {
-        Map<String, Integer> map = new HashMap<>();
-        map.put("code", 200);
-        String res = gson.toJson(map);
-        return res;
-    }
-
-    @RequestMapping("/account")
-    public String showAccount(HttpSession session, Model model) {
-        List<Orderdetail> orderdetails = orderdetailBiz.findAllOrderdetailsByUsername((String) session.getAttribute("username"));
-        Double account = orderdetailBiz.calculateAccount(orderdetails);
-        model.addAttribute("orderdetails",orderdetails);
-        model.addAttribute("account",account);
-        return "/account";
-    }
 }
