@@ -1,7 +1,9 @@
 package com.netease.kaola.controller;
 
 import com.google.gson.Gson;
+import com.netease.kaola.entity.Orderdetail;
 import com.netease.kaola.entity.Product;
+import com.netease.kaola.service.OrderdetailBiz;
 import com.netease.kaola.service.ProductBiz;
 import org.apache.ibatis.annotations.Param;
 import org.apache.shiro.SecurityUtils;
@@ -18,11 +20,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,10 +35,13 @@ import java.util.Map;
 @Controller
 @RequestMapping("/product")
 public class ProductController {
-    private Gson gson = new Gson();
     public static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
+    private Gson gson = new Gson();
     @Autowired
     private ProductBiz productBiz;
+
+    @Autowired
+    private OrderdetailBiz orderdetailBiz;
 
     @RequestMapping("")
     public String showProducts(Model model) {
@@ -107,9 +114,18 @@ public class ProductController {
     @ResponseBody
     @RequestMapping(value = "/buy", method = RequestMethod.POST)
     public String buy(@Param("id") Long id, @Param("num") int num) {
-        Map<String,Integer> map = new HashMap<>();
-        map.put("code",200);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("code", 200);
         String res = gson.toJson(map);
         return res;
+    }
+
+    @RequestMapping("/account")
+    public String showAccount(HttpSession session, Model model) {
+        List<Orderdetail> orderdetails = orderdetailBiz.findAllOrderdetailsByUsername((String) session.getAttribute("username"));
+        Double account = orderdetailBiz.calculateAccount(orderdetails);
+        model.addAttribute("orderdetails",orderdetails);
+        model.addAttribute("account",account);
+        return "/account";
     }
 }

@@ -1,6 +1,6 @@
 drop database if exists kaola;
 create database kaola;
-use kaola
+use kaola;
 
 drop table if exists seller;
 create table seller (

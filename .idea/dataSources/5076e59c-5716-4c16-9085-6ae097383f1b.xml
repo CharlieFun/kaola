@@ -14,216 +14,307 @@
     <schema id="8" parent="1" name="shiro"/>
     <schema id="9" parent="1" name="spitter"/>
     <schema id="10" parent="1" name="sys"/>
-    <table id="11" parent="2" name="permissions"/>
-    <table id="12" parent="2" name="product"/>
-    <table id="13" parent="2" name="roles"/>
-    <table id="14" parent="2" name="roles_permissions"/>
-    <table id="15" parent="2" name="seller"/>
-    <table id="16" parent="2" name="users"/>
-    <table id="17" parent="2" name="users_roles"/>
-    <column id="18" parent="11" name="id">
+    <table id="11" parent="2" name="orderdetail"/>
+    <table id="12" parent="2" name="orders"/>
+    <table id="13" parent="2" name="permissions"/>
+    <table id="14" parent="2" name="product"/>
+    <table id="15" parent="2" name="roles"/>
+    <table id="16" parent="2" name="roles_permissions"/>
+    <table id="17" parent="2" name="seller"/>
+    <table id="18" parent="2" name="shop_cart"/>
+    <table id="19" parent="2" name="users"/>
+    <table id="20" parent="2" name="users_roles"/>
+    <column id="21" parent="11" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="19" parent="11" name="permission">
+    <column id="22" parent="11" name="order_id">
       <Position>2</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="20" parent="11" name="description">
+    <column id="23" parent="11" name="product_id">
       <Position>3</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="21" parent="11" name="available">
+    <column id="24" parent="11" name="amount">
       <Position>4</Position>
-      <DataType>tinyint(1)|0</DataType>
-      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+      <DataType>int(11)|0</DataType>
     </column>
-    <index id="22" parent="11" name="idx_permissions_permission">
-      <ColNames>permission</ColNames>
-      <Unique>1</Unique>
+    <index id="25" parent="11" name="order_id">
+      <ColNames>order_id</ColNames>
     </index>
-    <key id="23" parent="11" name="PRIMARY">
+    <index id="26" parent="11" name="product_id">
+      <ColNames>product_id</ColNames>
+    </index>
+    <key id="27" parent="11" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="24" parent="11" name="idx_permissions_permission">
-      <ColNames>permission</ColNames>
-      <UnderlyingIndexName>idx_permissions_permission</UnderlyingIndexName>
-    </key>
-    <column id="25" parent="12" name="id">
+    <foreign-key id="28" parent="11" name="orderdetail_ibfk_1">
+      <ColNames>order_id</ColNames>
+      <RefSchemaName>kaola</RefSchemaName>
+      <RefTableName>orders</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="29" parent="11" name="orderdetail_ibfk_2">
+      <ColNames>product_id</ColNames>
+      <RefSchemaName>kaola</RefSchemaName>
+      <RefTableName>product</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="30" parent="12" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="26" parent="12" name="title">
+    <column id="31" parent="12" name="user_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="32" parent="12" name="createtime">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="33" parent="12" name="user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="34" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="12" name="orders_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>kaola</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="36" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="13" name="permission">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="38" parent="13" name="description">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="39" parent="13" name="available">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="40" parent="13" name="idx_permissions_permission">
+      <ColNames>permission</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="41" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="42" parent="13" name="idx_permissions_permission">
+      <ColNames>permission</ColNames>
+      <UnderlyingIndexName>idx_permissions_permission</UnderlyingIndexName>
+    </key>
+    <column id="43" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="14" name="title">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="12" name="detail">
+    <column id="45" parent="14" name="detail">
       <Position>4</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="12" name="price">
+    <column id="46" parent="14" name="price">
       <Position>5</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="12" name="status">
+    <column id="47" parent="14" name="status">
       <Position>7</Position>
       <DataType>tinyint(4)|0</DataType>
     </column>
-    <column id="30" parent="12" name="summary">
+    <column id="48" parent="14" name="summary">
       <Position>3</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="12" name="img_data">
+    <column id="49" parent="14" name="img_data">
       <Position>6</Position>
       <DataType>mediumblob|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="32" parent="12" name="PRIMARY">
+    <key id="50" parent="14" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="33" parent="13" name="id">
+    <column id="51" parent="15" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="34" parent="13" name="role">
+    <column id="52" parent="15" name="role">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="35" parent="13" name="description">
+    <column id="53" parent="15" name="description">
       <Position>3</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="36" parent="13" name="available">
+    <column id="54" parent="15" name="available">
       <Position>4</Position>
       <DataType>tinyint(1)|0</DataType>
-      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <index id="37" parent="13" name="idx_roles_role">
+    <index id="55" parent="15" name="idx_roles_role">
       <ColNames>role</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="38" parent="13" name="PRIMARY">
+    <key id="56" parent="15" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="39" parent="13" name="idx_roles_role">
+    <key id="57" parent="15" name="idx_roles_role">
       <ColNames>role</ColNames>
       <UnderlyingIndexName>idx_roles_role</UnderlyingIndexName>
     </key>
-    <column id="40" parent="14" name="role_id">
+    <column id="58" parent="16" name="role_id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="41" parent="14" name="permission_id">
+    <column id="59" parent="16" name="permission_id">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="42" parent="14" name="PRIMARY">
+    <key id="60" parent="16" name="PRIMARY">
       <ColNames>role_id
 permission_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="43" parent="15" name="id">
+    <column id="61" parent="17" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="44" parent="15" name="username">
+    <column id="62" parent="17" name="username">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="45" parent="15" name="password">
+    <column id="63" parent="17" name="password">
       <Position>3</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="46" parent="15" name="telephone">
+    <column id="64" parent="17" name="telephone">
       <Position>4</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="47" parent="15" name="idx_seller_username">
+    <index id="65" parent="17" name="idx_seller_username">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="48" parent="15" name="idx_seller_telephone">
+    <index id="66" parent="17" name="idx_seller_telephone">
       <ColNames>telephone</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="49" parent="15" name="PRIMARY">
+    <key id="67" parent="17" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="50" parent="15" name="idx_seller_username">
+    <key id="68" parent="17" name="idx_seller_username">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>idx_seller_username</UnderlyingIndexName>
     </key>
-    <key id="51" parent="15" name="idx_seller_telephone">
+    <key id="69" parent="17" name="idx_seller_telephone">
       <ColNames>telephone</ColNames>
       <UnderlyingIndexName>idx_seller_telephone</UnderlyingIndexName>
     </key>
-    <column id="52" parent="16" name="id">
+    <column id="70" parent="18" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="53" parent="16" name="username">
+    <column id="71" parent="18" name="user_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="72" parent="18" name="product_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="73" parent="18" name="user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="74" parent="18" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="75" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="76" parent="19" name="username">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="54" parent="16" name="password">
+    <column id="77" parent="19" name="password">
       <Position>3</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="55" parent="16" name="salt">
+    <column id="78" parent="19" name="salt">
       <Position>4</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="56" parent="16" name="locked">
+    <column id="79" parent="19" name="locked">
       <Position>5</Position>
       <DataType>tinyint(1)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <index id="57" parent="16" name="idx_users_username">
+    <index id="80" parent="19" name="idx_users_username">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="58" parent="16" name="PRIMARY">
+    <key id="81" parent="19" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="59" parent="16" name="idx_users_username">
+    <key id="82" parent="19" name="idx_users_username">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>idx_users_username</UnderlyingIndexName>
     </key>
-    <column id="60" parent="17" name="user_id">
+    <column id="83" parent="20" name="user_id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="61" parent="17" name="role_id">
+    <column id="84" parent="20" name="role_id">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="62" parent="17" name="PRIMARY">
+    <key id="85" parent="20" name="PRIMARY">
       <ColNames>user_id
 role_id</ColNames>
       <Primary>1</Primary>
