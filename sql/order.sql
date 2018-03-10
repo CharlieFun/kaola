@@ -24,6 +24,7 @@ CREATE TABLE shop_cart(
   id BIGINT AUTO_INCREMENT,
   user_id BIGINT,
   product_id BIGINT,
+  num INT,
   PRIMARY KEY (id),
   INDEX (user_id),
   FOREIGN KEY (user_id) REFERENCES users(id),

@@ -21,7 +21,7 @@
             </div>
             <div class="oprt f-cb">
                 <button class="u-btn u-btn-primary" data-buy="1" name="buy" id="${product.id}">立即购买</button>
-                <button class="u-btn u-btn-normal" name="addCart" id="${product.id}">加入购物车</button>
+                <button class="u-btn u-btn-normal" data-cart="1" id="${product.id}">加入购物车</button>
                 <span class="u-btn u-btn-primary z-dis">已购买</span>
                 <span class="buyprice">当时购买价格：¥123.9</span>
                 <%--<a href="./edit.html" class="u-btn u-btn-primary">编 辑</a>--%>

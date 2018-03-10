@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.netease.kaola.dao.ShoppingCartDao">
+    <resultMap id="shoppingCartMap" type="com.netease.kaola.entity.ShoppingCart">
+        <id property="id" column="id"/>
+        <result property="productId" column="product_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="num" column="num"/>
+        <association property="product" javaType="com.netease.kaola.entity.Product">
+            <id property="id" column="product_id"/>
+            <result property="title" column="title"/>
+            <result property="price" column="price"/>
+        </association>
+    </resultMap>
+
+    <insert id="add" parameterType="ShoppingCart">
+        INSERT INTO shop_cart (user_id, product_id, num) VALUES (#{userId}, #{productId}, #{num})
+    </insert>
+
+    <select id="findShoppingCartByUserId" resultMap="shoppingCartMap" parameterType="long">
+        SELECT shop_cart_temp.user_id,
+            shop_cart_temp.num,
+            product.id product_id,
+            product.title,
+            product.price
+        FROM (SELECT user_id,product_id,num FROM shop_cart WHERE user_id = #{userId})shop_cart_temp
+        LEFT JOIN product ON shop_cart_temp.product_id = product.id
+    </select>
+</mapper>

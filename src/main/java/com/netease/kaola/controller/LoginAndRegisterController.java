@@ -32,36 +32,38 @@ public class LoginAndRegisterController {
     @Autowired
     private RoleBiz roleBiz;
 
-    @RequestMapping(value = "login",method = RequestMethod.GET)
-    public String login(){
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    public String login() {
         return "login";
     }
 
-    @RequestMapping(value = "login",method = RequestMethod.POST)
+    @RequestMapping(value = "login", method = RequestMethod.POST)
     public String doLogin(User user, Model model, HttpSession session) {
         LOGGER.error("进入login");
         String username = user.getUsername();
         String password = user.getPassword();
         LOGGER.info("username => " + username);
         LOGGER.info("password => " + password);
-        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         Subject subject = SecurityUtils.getSubject();
         String msg = null;
         try {
             subject.login(token);
         } catch (UnknownAccountException e) {
             msg = e.getMessage();
-        } catch (IncorrectCredentialsException e){
+        } catch (IncorrectCredentialsException e) {
             msg = "用户名或密码不正确)";
-        } catch (LockedAccountException e){
+        } catch (LockedAccountException e) {
             msg = e.getMessage();
         }
-        model.addAttribute("msg",msg);
+        model.addAttribute("msg", msg);
         boolean isAuthenticated = subject.isAuthenticated();
         LOGGER.info("用户{}是否验证成功：{}", subject.getPrincipal(), isAuthenticated);
         if (isAuthenticated) {
             String principal = (String) subject.getPrincipal();
             session.setAttribute("username", principal);
+            User currentUser = userBiz.findByUsername(username);
+            session.setAttribute("currentUser", currentUser);
             if (subject.hasRole("seller")) {
                 return "redirect:/seller";
             } else {
@@ -86,11 +88,11 @@ public class LoginAndRegisterController {
         return "redirect:/login";
     }
 
-    @RequestMapping(value = "/logout",method = RequestMethod.GET)
-    public String logout(Model model){
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(Model model) {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
-        model.addAttribute("msg","您已经退出登录");
+        model.addAttribute("msg", "您已经退出登录");
         return "/login";
     }
 }

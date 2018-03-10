@@ -10,13 +10,14 @@
         init: function () {
             showContent.addEventListener('click', function (e) {
                 var productNum = $('allNum').textContent;
-               // var testId = $("button[name='buy']").at
+                // var testId = $("button[name='buy']").at
                 //console.log(productNum+'+'+productId);
                 var ele = e.target;
                 var buy = ele && ele.dataset.buy;
+                var cart = ele && ele.dataset.cart;
                 if (buy) {
                     //var id = productId;
-                    console.log(productNum+'+'+productId);
+                    console.log(productNum + '+' + productId);
                     console.log(productId);
                     layer.reset({
                         content: '确认购买本内容吗？',
@@ -24,7 +25,7 @@
                             layer.hide();
                             loading.show();
                             ajax({
-                                data: {productId:productId,num:productNum},
+                                data: {productId: productId, num: productNum},
                                 url: '/buy',
                                 type: 'POST',
                                 success: function (result) {
@@ -38,6 +39,23 @@
                             });
                         }.bind(this)
                     }).show();
+                    return;
+                }
+                if (cart) {
+                    //var id = productId;
+                    console.log(productNum + '+' + productId);
+                    console.log('到这里了');
+                    ajax({
+                        data: {productId: productId, num: productNum},
+                        url: '/addShoppingCart',
+                        type: 'POST',
+                        success: function (result) {
+                            loading.result('加入购物车成功');
+                        },
+                        error: function (message) {
+                            loading.result(message || '加入购物车失败');
+                        }
+                    });
                     return;
                 }
             }.bind(this), false);
