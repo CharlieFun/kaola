@@ -121,6 +121,12 @@
 			this.isConfirmed = false;
 			this.body.style.display = 'none';
 		}
+		// showContent:function(content){
+         //    this.isConfirmed = false;
+         //    this.
+         //    this.rend();
+         //    this.body.style.display = '';
+		// }
 	};
 	
 	//loading

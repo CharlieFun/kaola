@@ -17,13 +17,18 @@
         INSERT INTO shop_cart (user_id, product_id, num) VALUES (#{userId}, #{productId}, #{num})
     </insert>
 
+    <delete id="delete" parameterType="long">
+        DELETE FROM shop_cart WHERE id = #{id}
+    </delete>
+
     <select id="findShoppingCartByUserId" resultMap="shoppingCartMap" parameterType="long">
-        SELECT shop_cart_temp.user_id,
+        SELECT shop_cart_temp.id,
+            shop_cart_temp.user_id,
             shop_cart_temp.num,
             product.id product_id,
             product.title,
             product.price
-        FROM (SELECT user_id,product_id,num FROM shop_cart WHERE user_id = #{userId})shop_cart_temp
+        FROM (SELECT id,user_id,product_id,num FROM shop_cart WHERE user_id = #{userId})shop_cart_temp
         LEFT JOIN product ON shop_cart_temp.product_id = product.id
     </select>
 </mapper>

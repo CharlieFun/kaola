@@ -2,26 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ebb95d-5bad-4c47-a16f-71c1b256e22e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/entity/ShoppingCart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/ShoppingCartBiz.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/com/netease/kaola/service/impl/ShoppingCartBizImplTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/netease/kaola/controller/BuyerController.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ShoppingCartController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/netease/kaola/controller/BuyerController.class" afterPath="$PROJECT_DIR$/target/classes/com/netease/kaola/controller/BuyerController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/netease/kaola/dao/ShoppingCartDao.class" afterPath="$PROJECT_DIR$/target/classes/com/netease/kaola/dao/ShoppingCartDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/netease/kaola/service/ShoppingCartBiz.class" afterPath="$PROJECT_DIR$/target/classes/com/netease/kaola/service/ShoppingCartBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/netease/kaola/service/impl/ShoppingCartBizImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/netease/kaola/service/impl/ShoppingCartBizImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/controller/BuyerController.class" afterPath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/controller/BuyerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/5076e59c-5716-4c16-9085-6ae097383f1b.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/5076e59c-5716-4c16-9085-6ae097383f1b.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/dao/ShoppingCartDao.class" afterPath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/dao/ShoppingCartDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/service/ShoppingCartBiz.class" afterPath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/service/ShoppingCartBiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/service/impl/ShoppingCartBizImpl.class" afterPath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/service/impl/ShoppingCartBizImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/order.sql" afterPath="$PROJECT_DIR$/sql/order.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/LoginAndRegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/LoginAndRegisterController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/product_show.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/product_show.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/dist/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/dist/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/head.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/head.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/ShoppingCartBiz.java" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/ShoppingCartBiz.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shopping_cart.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shopping_cart.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/global.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/global.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/pageShow.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/pageShow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/WEB-INF/view/product_show.jsp" afterPath="$PROJECT_DIR$/target/kaola/WEB-INF/view/product_show.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/dist/css/style.css" afterPath="$PROJECT_DIR$/target/kaola/dist/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/head.jsp" afterPath="$PROJECT_DIR$/target/kaola/head.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/netease/kaola/dao/ShoppingCartDao.xml" afterPath="$PROJECT_DIR$/target/classes/com/netease/kaola/dao/ShoppingCartDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/dao/ShoppingCartDao.xml" afterPath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/dao/ShoppingCartDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/WEB-INF/view/shopping_cart.jsp" afterPath="$PROJECT_DIR$/target/kaola/WEB-INF/view/shopping_cart.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/js/global.js" afterPath="$PROJECT_DIR$/target/kaola/js/global.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/kaola/js/pageShow.js" afterPath="$PROJECT_DIR$/target/kaola/js/pageShow.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -206,11 +208,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ShoppingCartBiz.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/ShoppingCartBiz.java">
+      <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+            <state relative-caret-position="237">
+              <caret line="98" column="27" lean-forward="true" selection-start-line="98" selection-start-column="27" selection-end-line="98" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -218,51 +220,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShoppingCart.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/entity/ShoppingCart.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-              <folding>
-                <element signature="e#511#512#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shopping_cart.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="shopping_cart.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shopping_cart.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="403">
+              <caret line="88" column="87" lean-forward="false" selection-start-line="88" selection-start-column="87" selection-end-line="88" selection-end-column="87" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShoppingCartBizImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#555#556#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShoppingCartBizImplTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/com/netease/kaola/service/impl/ShoppingCartBizImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -277,31 +240,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/dist/css/style.css">
+      <file leaf-file-name="buyer_products.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/buyer_products.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="199" column="14" lean-forward="false" selection-start-line="199" selection-start-column="14" selection-end-line="199" selection-end-column="14" />
+            <state relative-caret-position="289">
+              <caret line="17" column="93" lean-forward="false" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="93" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pageShow.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/pageShow.js">
+      <file leaf-file-name="SellerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/SellerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+            <state relative-caret-position="153">
+              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuyerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java">
+      <file leaf-file-name="ShoppingCartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ShoppingCartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="84" column="48" lean-forward="false" selection-start-line="84" selection-start-column="48" selection-end-line="84" selection-end-column="48" />
+            <state relative-caret-position="458">
+              <caret line="57" column="40" lean-forward="false" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -309,12 +272,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="head.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/head.jsp">
+      <file leaf-file-name="ShoppingCartDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShoppingCartDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+              <folding>
+                <marker date="1520741429045" expanded="true" signature="833:922" ph="INSERT INTO shop_cart... " />
+                <marker date="1520741429045" expanded="true" signature="992:1030" ph="DELETE FROM " />
+                <marker date="1520741429045" expanded="true" signature="1146:1498" ph="SELECT shop_... user_id" />
+                <marker date="1520741429045" expanded="true" signature="1342:1415" ph="SELECT user_... shop_cart" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShoppingCartBiz.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/ShoppingCartBiz.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShoppingCartBizImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+              <folding>
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#604#605#0" expanded="true" />
+                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#851#852#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -328,8 +333,8 @@
         <option value="Jsp File" />
         <option value="Interface" />
         <option value="Mybatis Mapper" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -357,7 +362,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/RoleDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/RoleDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/RoleBizImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/UserDao.xml" />
@@ -373,7 +377,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/SellerController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/nav.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/global.js" />
         <option value="$PROJECT_DIR$/sql/kaola.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/entity/Oderdetail.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/OrderdetailDao.java" />
@@ -396,18 +399,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/LoginAndRegisterController.java" />
         <option value="$PROJECT_DIR$/sql/order.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/OrderdetailDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/ShoppingCartBiz.java" />
         <option value="$PROJECT_DIR$/src/test/com/netease/kaola/service/impl/ShoppingCartBizImplTest.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5076e59c-5716-4c16-9085-6ae097383f1b/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/pageShow.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/entity/ShoppingCart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shopping_cart.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/head.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/dist/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/global.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/pageShow.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/ShoppingCartBiz.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ShoppingCartController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shopping_cart.jsp" />
       </list>
     </option>
   </component>
@@ -1665,7 +1670,7 @@
       <workItem from="1518665502320" duration="1461000" />
       <workItem from="1519800396755" duration="1867000" />
       <workItem from="1520219510918" duration="13310000" />
-      <workItem from="1520327259416" duration="47177000" />
+      <workItem from="1520327259416" duration="50514000" />
     </task>
     <servers />
   </component>
@@ -1702,7 +1707,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154767000" />
+    <option name="totallyTimeSpent" value="158104000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1789,30 +1794,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/src.zip!/java/sql/Timestamp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="71" column="13" lean-forward="false" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/bottom.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/foot.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/seller_products.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1826,16 +1807,6 @@
         <state relative-caret-position="212">
           <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="764">
-          <caret line="98" column="27" lean-forward="true" selection-start-line="98" selection-start-column="27" selection-end-line="98" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1994,14 +1965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/buyer_products.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="93" lean-forward="false" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/LoginAndRegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -2096,29 +2059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <marker date="1520343943734" expanded="true" signature="2070:2654" ph="..." />
-            <marker date="1520343943734" expanded="true" signature="2107:2639" ph="..." />
-            <marker date="1520343943734" expanded="true" signature="2156:2620" ph="..." />
-            <marker date="1520343943734" expanded="true" signature="2327:2597" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/com/netease/kaola/service/impl/OrderdetailBizImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -2154,50 +2094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#604#605#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="84" column="48" lean-forward="false" selection-start-line="84" selection-start-column="48" selection-end-line="84" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/ShoppingCartBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="52" lean-forward="true" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-          <folding>
-            <marker date="1520703194702" expanded="true" signature="833:922" ph="INSERT INTO shop_cart... " />
-            <marker date="1520703194702" expanded="true" signature="1038:1356" ph="SELECT shop_... user_id" />
-            <marker date="1520703194702" expanded="true" signature="1203:1273" ph="SELECT user_... shop_cart" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/entity/ShoppingCart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -2222,16 +2118,8 @@
         <state relative-caret-position="510">
           <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shopping_cart.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2243,6 +2131,112 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="122" column="9" lean-forward="false" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
+          <folding>
+            <marker date="1520739934997" expanded="true" signature="2070:2654" ph="..." />
+            <marker date="1520739934997" expanded="true" signature="2107:2639" ph="..." />
+            <marker date="1520739934997" expanded="true" signature="2156:2620" ph="..." />
+            <marker date="1520739934997" expanded="true" signature="2327:2597" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/pageShow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="49" column="47" lean-forward="false" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/SellerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ProductDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1517659155784" expanded="true" signature="1255:1406" ph="INSERT INTO product... " />
+            <marker date="1517659155784" expanded="true" signature="1489:1629" ph="UPDATE produ... " />
+            <marker date="1517659155784" expanded="true" signature="1702:1869" ph="UPDATE produ... " />
+            <marker date="1517659155784" expanded="true" signature="1939:1975" ph="DELETE FROM " />
+            <marker date="1517659155784" expanded="true" signature="2058:2079" ph="SELECT * FRO... product" />
+            <marker date="1517659155784" expanded="true" signature="2155:2200" ph="SELECT img_d... product" />
+            <marker date="1517659155784" expanded="true" signature="2290:2326" ph="SELECT * FRO... product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/ShoppingCartBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ShoppingCartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="57" column="40" lean-forward="false" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="98" column="27" lean-forward="true" selection-start-line="98" selection-start-column="27" selection-end-line="98" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/product_show.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -2251,10 +2245,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/pageShow.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/buyer_products.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+        <state relative-caret-position="289">
+          <caret line="17" column="93" lean-forward="false" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <marker date="1520741429045" expanded="true" signature="833:922" ph="INSERT INTO shop_cart... " />
+            <marker date="1520741429045" expanded="true" signature="992:1030" ph="DELETE FROM " />
+            <marker date="1520741429045" expanded="true" signature="1146:1498" ph="SELECT shop_... user_id" />
+            <marker date="1520741429045" expanded="true" signature="1342:1415" ph="SELECT user_... shop_cart" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shopping_cart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="88" column="87" lean-forward="false" selection-start-line="88" selection-start-column="87" selection-end-line="88" selection-end-column="87" />
           <folding />
         </state>
       </provider>

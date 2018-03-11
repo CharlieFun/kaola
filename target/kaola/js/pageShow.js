@@ -11,7 +11,7 @@
             showContent.addEventListener('click', function (e) {
                 var productNum = $('allNum').textContent;
                 // var testId = $("button[name='buy']").at
-                //console.log(productNum+'+'+productId);
+                console.log(productNum+'+'+productId);
                 var ele = e.target;
                 var buy = ele && ele.dataset.buy;
                 var cart = ele && ele.dataset.cart;
@@ -47,12 +47,14 @@
                     console.log('到这里了');
                     ajax({
                         data: {productId: productId, num: productNum},
-                        url: '/addShoppingCart',
+                        url: '/shoppingCart/add',
                         type: 'POST',
                         success: function (result) {
+                            loading.show();
                             loading.result('加入购物车成功');
                         },
                         error: function (message) {
+                            loading.show();
                             loading.result(message || '加入购物车失败');
                         }
                     });

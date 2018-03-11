@@ -13,4 +13,6 @@ public interface ShoppingCartDao {
     void add(ShoppingCart shoppingCart);
 
     List<ShoppingCart> findShoppingCartByUserId(Long userId);
+
+    void delete(Long id);
 }

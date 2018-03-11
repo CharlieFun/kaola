@@ -61,12 +61,12 @@
                                 <input type="checkbox" class="u-chk" name="selectGood">
                             </div>
                             <div class="col col2">
-                                <a href="/product/show/id=?${item.product.id}" target="_blank" class="imgwrap">
+                                <a href="/product/show?id=${item.product.id}" target="_blank" class="imgwrap">
                                     <img src="/product/showImg?id=${item.product.id}">
                                 </a>
                                 <div class="txtwrap">
                                     <h3 class="goodtlt">
-                                        <a href="/product/show/id=?${item.product.id}" target="_blank">
+                                        <a href="/product/show?id=${item.product.id}" target="_blank">
                                             ${item.product.title}
                                         </a>
                                     </h3>
@@ -86,7 +86,8 @@
                                 <span class="sum sumrow">${item.product.price*item.num}</span>
                             </div>
                             <div class="col col6">
-                                <a class="u-opt">删除</a>
+                                <a class="u-opt" href="/shoppingCart/delete/?id=${item.id}">删除</a>
+                                <br/>
                                 <span class="u-opt">移入我的收藏</span>
                             </div>
                         </li>

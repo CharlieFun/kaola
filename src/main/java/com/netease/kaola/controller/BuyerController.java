@@ -66,25 +66,4 @@ public class BuyerController {
         return "/account";
     }
 
-    @RequestMapping("/shoppingCart")
-    public String showShoppingCar(HttpSession session, Model model) {
-        User currentUser = (User) session.getAttribute("currentUser");
-        List<ShoppingCart> shoppingCarts = shoppingCartBiz.findShoppingCartByUserId(currentUser.getId());
-        model.addAttribute("items", shoppingCarts);
-        return "/shopping_cart";
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/addShoppingCart", method = RequestMethod.POST)
-    public String addShoppingCart(@Param("productId") Long productId, @Param("num") int num, HttpSession session) {
-        LOGGER.info("购物车，购买的商品ID是：{}", productId);
-        LOGGER.info("购买数量是：{}", num);
-        User currentUser = (User) session.getAttribute("currentUser");
-        ShoppingCart shoppingCart = new ShoppingCart(currentUser.getId(), productId, num);
-        shoppingCartBiz.add(shoppingCart);
-        LOGGER.info("加入购物车成功，商品ID:{}", productId);
-        Map<String, Integer> map = new HashMap<>();
-        map.put("code", 200);
-        return gson.toJson(map);
-    }
 }

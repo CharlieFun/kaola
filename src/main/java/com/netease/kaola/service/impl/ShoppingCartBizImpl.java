@@ -25,4 +25,9 @@ public class ShoppingCartBizImpl implements ShoppingCartBiz {
     public List<ShoppingCart> findShoppingCartByUserId(Long userId) {
         return shoppingCartDao.findShoppingCartByUserId(userId);
     }
+
+    @Override
+    public void delete(Long id) {
+        shoppingCartDao.delete(id);
+    }
 }
