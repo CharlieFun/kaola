@@ -25,6 +25,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -66,8 +67,38 @@ public class ProductController {
             }
         }
         model.addAttribute("products", products);
+        //显示全部内容还是未购买内容
+        model.addAttribute("flag",true);
         return "buyer_products";
     }
+
+    @RequestMapping("notBuy")
+    public String notBuy(HttpSession session, Model model){
+        List<Product> products = productBiz.findAll();
+        String username = (String) session.getAttribute("username");
+        List<Orderdetail> orderdetails = orderdetailBiz.findAllOrderdetailsByUsername(username);
+        Map<Long, Orderdetail> orderdetailMap = new HashMap<>();
+        List<Product> notBuyProducts = new ArrayList<>();
+        //默认值为0.0
+        Double lastBuyPrice = 0.0;
+        //判断是否之前购买过商品
+        if (orderdetails.get(0) != null) {
+            for (Orderdetail orderdetail : orderdetails) {
+                orderdetailMap.put(orderdetail.getProductId(), orderdetail);
+            }
+            for (Product product : products) {
+                if (!orderdetailMap.containsKey(product.getId())) {
+                    notBuyProducts.add(product);
+                    product.setLastBuyPrice(lastBuyPrice);
+                }
+            }
+        }
+        model.addAttribute("products", notBuyProducts);
+        //显示全部内容还是未购买内容
+        model.addAttribute("flag",false);
+        return "buyer_products";
+    }
+
 
     @RequestMapping("/addView")
     public String addView() {
