@@ -17,15 +17,18 @@ public class Orderdetail {
     private Timestamp createtime;
     //格式化的日期
     private String stringTime;
+    //购买时的商品价格
+    private Double currentPrice;
     private Product product;
 
     public Orderdetail() {
     }
 
-    public Orderdetail(Long orderId, Long productId, int amount) {
+    public Orderdetail(Long orderId, Long productId, int amount, Double currentPrice) {
         this.orderId = orderId;
         this.productId = productId;
         this.amount = amount;
+        this.currentPrice = currentPrice;
     }
 
     public Long getId() {
@@ -85,5 +88,13 @@ public class Orderdetail {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String newTime = dateFormat.format(createtime);//将时间格式转换成符合Timestamp要求的格式.
         this.stringTime = newTime;
+    }
+
+    public Double getCurrentPrice() {
+        return currentPrice;
+    }
+
+    public void setCurrentPrice(Double currentPrice) {
+        this.currentPrice = currentPrice;
     }
 }

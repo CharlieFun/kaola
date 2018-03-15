@@ -13,7 +13,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a href="${pageContext.request.contextPath}/product/addView" class="btn btn-primary"
-                           role="button">添加商品</a>
+                           role="button">发布</a>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">

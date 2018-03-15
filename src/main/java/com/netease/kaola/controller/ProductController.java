@@ -44,8 +44,28 @@ public class ProductController {
     private OrderdetailBiz orderdetailBiz;
 
     @RequestMapping("")
-    public String showProducts(Model model) {
-        model.addAttribute("products", productBiz.findAll());
+    public String showProducts(HttpSession session, Model model) {
+        List<Product> products = productBiz.findAll();
+        String username = (String) session.getAttribute("username");
+        List<Orderdetail> orderdetails = orderdetailBiz.findAllOrderdetailsByUsername(username);
+        LOGGER.info("size:{}", orderdetails.size());
+        Map<Long, Orderdetail> orderdetailMap = new HashMap<>();
+        //默认值为0.0
+        Double lastBuyPrice = 0.0;
+        //判断是否之前购买过商品
+        if (orderdetails.get(0) != null) {
+            for (Orderdetail orderdetail : orderdetails) {
+                orderdetailMap.put(orderdetail.getProductId(), orderdetail);
+            }
+            for (Product product : products) {
+                if (orderdetailMap.containsKey(product.getId())) {
+                    product.setLastBuyPrice(orderdetailMap.get(product.getId()).getCurrentPrice());
+                } else {
+                    product.setLastBuyPrice(lastBuyPrice);
+                }
+            }
+        }
+        model.addAttribute("products", products);
         return "buyer_products";
     }
 
@@ -83,9 +103,12 @@ public class ProductController {
         return "redirect:/seller";
     }
 
+    //todo 加一个参数，上次购买价格
     @RequestMapping("/show")
-    public String showProduct(@Param("id") Long id, Model model) {
-        model.addAttribute("product", productBiz.getProductById(id));
+    public String showProduct(@Param("id") Long id, @Param("lastBuyPrice") Double lastBuyPrice, Model model) {
+        Product product = productBiz.getProductById(id);
+        product.setLastBuyPrice(lastBuyPrice);
+        model.addAttribute("product", product);
         return "product_show";
     }
 

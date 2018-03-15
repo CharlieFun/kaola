@@ -17,6 +17,8 @@ public class Product {
     private byte[] imgData;
     //是否上架
     private boolean status;
+    //上次购买的价格，这是根据不同用户ID进行查询的
+    private Double lastBuyPrice = 0.0;
 
     public Long getId() {
         return id;
@@ -72,6 +74,14 @@ public class Product {
 
     public void setImgData(byte[] imgData) {
         this.imgData = imgData;
+    }
+
+    public Double getLastBuyPrice() {
+        return lastBuyPrice;
+    }
+
+    public void setLastBuyPrice(Double lastBuyPrice) {
+        this.lastBuyPrice = lastBuyPrice;
     }
 
     @Override

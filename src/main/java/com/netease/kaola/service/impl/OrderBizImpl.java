@@ -2,8 +2,10 @@ package com.netease.kaola.service.impl;
 
 import com.netease.kaola.dao.OrderDao;
 import com.netease.kaola.dao.OrderdetailDao;
+import com.netease.kaola.dao.ProductDao;
 import com.netease.kaola.entity.Order;
 import com.netease.kaola.entity.Orderdetail;
+import com.netease.kaola.entity.Product;
 import com.netease.kaola.service.OrderBiz;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +27,8 @@ public class OrderBizImpl implements OrderBiz {
     private OrderDao orderDao;
     @Autowired
     private OrderdetailDao orderdetailDao;
+    @Autowired
+    private ProductDao productDao;
 
     @Override
     public boolean buy(Long userId, Long productId, int amount) {
@@ -36,7 +40,8 @@ public class OrderBizImpl implements OrderBiz {
         orderDao.add(order);
         Long orderId = order.getId();
         LOGGER.info("新创建订单，订单ID为：{}", orderId);
-        Orderdetail orderdetail = new Orderdetail(orderId, productId, amount);
+        Product product = productDao.getProductById(productId);
+        Orderdetail orderdetail = new Orderdetail(orderId, productId, amount, product.getPrice());
         orderdetailDao.add(orderdetail);
         return true;
     }

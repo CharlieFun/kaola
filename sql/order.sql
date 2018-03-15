@@ -15,6 +15,7 @@ CREATE TABLE orderdetail(
   order_id BIGINT,
   product_id BIGINT,
   amount INT,
+  current_price DOUBLE,
   PRIMARY KEY (id),
   FOREIGN KEY (order_id) REFERENCES orders(id),
   FOREIGN KEY (product_id) REFERENCES product(id)

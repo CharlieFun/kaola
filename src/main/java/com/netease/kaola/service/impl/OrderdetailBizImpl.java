@@ -24,8 +24,10 @@ public class OrderdetailBizImpl implements OrderdetailBiz {
     @Override
     public Double calculateAccount(List<Orderdetail> orderdetails) {
         Double account = 0.0;
-        for (Orderdetail orderdetail:orderdetails){
-            account += orderdetail.getAmount()*orderdetail.getProduct().getPrice();
+        for (Orderdetail orderdetail : orderdetails) {
+            if (orderdetail != null) {
+                account += orderdetail.getAmount() * orderdetail.getProduct().getPrice();
+            }
         }
         return account;
     }

@@ -15,10 +15,13 @@
         <ul class="f-cb" id="plist">
             <c:forEach var="product" items="${products}">
                 <li id="${product.id}">
-                    <a href="${pageContext.request.contextPath}/product/show?id=${product.id}" class="link">
+                    <a href="${pageContext.request.contextPath}/product/show?id=${product.id}&lastBuyPrice=${product.lastBuyPrice}" class="link">
                         <div class="img"><img src="/product/showImg?id=${product.id}" alt=""></div>
                         <h3>${product.title}</h3>
                         <div class="price"><span class="v-unit">¥</span><span class="v-value">${product.price}</span></div>
+                        <c:if test="${product.lastBuyPrice > 0}">
+                            <span class="had"><b>已购买</b></span>
+                        </c:if>
                     </a>
                 </li>
             </c:forEach>
