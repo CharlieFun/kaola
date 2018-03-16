@@ -93,25 +93,24 @@
                         </li>
                     </ul>
                 </c:forEach>
-                <div class="cartinfo">
-                    <span class="discount">活动优惠：-￥0.00</span>
-                    <div class="allsum">
-                        <span>商品应付总计：<em class="totalnum ">￥1059.00</em></span>
-                    </div>
-                    <div class="taxbox">
-                        <span class="j-taxnum"><em class="tt">预估税费：</em>￥0.00</span>
-                    </div>
-                </div>
+                <%--<div class="cartinfo">--%>
+                <%--<span class="discount">活动优惠：-￥0.00</span>--%>
+                <%--<div class="allsum">--%>
+                <%--<span>商品应付总计：<em class="totalnum ">￥1059.00</em></span>--%>
+                <%--</div>--%>
+                <%--<div class="taxbox">--%>
+                <%--<span class="j-taxnum"><em class="tt">预估税费：</em>￥0.00</span>--%>
+                <%--</div>--%>
+                <%--</div>--%>
             </div>
         </div>
         <div class="totalbox">
             <div id="point"></div>
             <div class="m-total f-cb" id="totalbar" style="position: relative; width: 1088px;">
-                <!--Regular if92-->
                 <div class="ttbar">
                     <div class="rt">
-                        <p class="allgoods">已选商品 <em class="num">1</em> 件 <span class="itm">总价(不含运费)：<em class="num">￥1059.00</em></span>
-                        </p>
+                        <%--<p class="allgoods">已选商品 <em class="num">1</em> 件 <span class="itm">总价(不含运费)：<em class="num">￥1059.00</em></span>--%>
+                        <%--</p>--%>
                         <%--<p class="allmoney">活动优惠：-￥0.00<span class="itm">商品应付总计：￥1059.00</span><span class="itm">商品税费（不含运费税）：￥0.00</span></p>--%>
                         <button type="button" id="confirmBuy" class="gobuy">去结算</button>
                     </div>
@@ -125,6 +124,9 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
 <script type="text/javascript">
     var loading = new Loading();
+    //    var $ = function (id) {
+    //        return document.getElementById(id);
+    //    };
 
     function getShoppingCars() {
         judgeIsLogin();
@@ -140,8 +142,6 @@
             dataType: 'json',
             success: function (result) {
                 shoppingCarProducts = result.result;
-//                console.log('return:'+result.result);
-//                loading.result('查询成功');
             },
             error: function (result) {
                 loading.result('查询错误');
@@ -149,7 +149,6 @@
         });
 //        shoppingCarProducts = eval("(" + shoppingCarProducts + ")");
         res = JSON.parse(shoppingCarProducts);
-//        console.log('这里'+res[0].productId);
         return res;
     }
 
@@ -158,12 +157,14 @@
         init: function () {
             confirmBuy.addEventListener('click', function (e) {
                 var allShoppingCars = getShoppingCars();
+                var shoppingCartIds = new Array;
                 var productIds = new Array;
                 var productNums = new Array;
                 var buyCounts = 0;
                 for (var i = 0; i < allShoppingCars.length; i++) {
                     var checkBox = document.getElementById("checkbox" + allShoppingCars[i].productId);
                     if (checkBox.checked) {
+                        shoppingCartIds[buyCounts] = allShoppingCars[i].id;
                         productIds[buyCounts] = allShoppingCars[i].productId;
                         productNums[buyCounts] = allShoppingCars[i].num;
                         buyCounts++;
@@ -177,7 +178,11 @@
                     console.log(productIds);
                     console.log(productNums);
                     ajax({
-                        data: {strProductIds: JSON.stringify(productIds), strNums: JSON.stringify(productNums)},
+                        data: {
+                            strProductIds: JSON.stringify(productIds),
+                            strNums: JSON.stringify(productNums),
+                            strShoppingCartIds: JSON.stringify(shoppingCartIds)
+                        },
                         url: '/buyShoppingCart',
                         type: 'POST',
                         success: function (result) {
@@ -194,53 +199,6 @@
         }
     };
     buyPage.init();
-
-    function confirmPre() {
-        var allShoppingCars = getShoppingCars();
-        var productIds = new Array;
-        var productNums = new Array;
-        var buyCounts = 0;
-        for (var i = 0; i < allShoppingCars.length; i++) {
-            var checkBox = document.getElementById("checkbox" + allShoppingCars[i].productId);
-            if (checkBox.checked) {
-                productIds[buyCounts] = allShoppingCars[i].productId;
-                productNums[buyCounts] = allShoppingCars[i].num;
-                buyCounts++;
-            }
-        }
-        if (buyCounts == 0) {
-            loading.show();
-            loading.result("未选中商品");
-        }
-        else {
-            buyConfirm(productIds, productNums);
-        }
-    }
-
-    function buyConfirm(productIds, productNums) {
-        layer = new Layer();
-        layer.reset({
-            content: '确认购买吗？',
-            onconfirm: function () {
-                layer.hide();
-                loading.show();
-                ajax({
-                    data: {productIds: JSON.stringify(productIds), nums: JSON.stringify(productNums)},
-                    url: '/buyShoppingCart',
-                    type: 'POST',
-                    success: function (result) {
-                        loading.result('购买成功', function () {
-                            location.href = '/product';
-                        });
-                    },
-                    error: function (message) {
-                        loading.result(message || '购买失败');
-                    }
-                });
-            }.bind(this)
-        }).show();
-        return;
-    }
 
 
     function getProductById(id) {
@@ -270,47 +228,10 @@
         }
     }
 
-
-    function getUserAddress(id) {
-        var address = "";
-        var user = {};
-        user.id = id;
-        $.ajax({
-            async: false, //设置同步
-            type: 'POST',
-            url: '${cp}/getUserAddressAndPhoneNumber',
-            data: user,
-            dataType: 'json',
-            success: function (result) {
-                address = result.address;
-            },
-            error: function (result) {
-                layer.alert('查询错误');
-            }
-        });
-        return address;
-    }
-
-
-    function getUserPhoneNumber(id) {
-        var phoneNumber = "";
-        var user = {};
-        user.id = id;
-        $.ajax({
-            async: false, //设置同步
-            type: 'POST',
-            url: '${cp}/getUserAddressAndPhoneNumber',
-            data: user,
-            dataType: 'json',
-            success: function (result) {
-                phoneNumber = result.phoneNumber;
-            },
-            error: function (result) {
-                layer.alert('查询错误');
-            }
-        });
-        return phoneNumber;
-    }
+    //    function selectAllClick(){
+    //        $ = document.getElementById;
+    //
+    //    }
 
     function addToShoppingRecordsPre(productsId, productsCounts) {
         for (var i = 0; i < productsId.length; i++) {

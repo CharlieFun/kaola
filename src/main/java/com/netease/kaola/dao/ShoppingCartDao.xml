@@ -17,6 +17,10 @@
         INSERT INTO shop_cart (user_id, product_id, num) VALUES (#{userId}, #{productId}, #{num})
     </insert>
 
+    <update id="updateNum" parameterType="map">
+        UPDATE shop_cart SET num = #{num} WHERE id = #{id}
+    </update>
+
     <delete id="delete" parameterType="long">
         DELETE FROM shop_cart WHERE id = #{id}
     </delete>
@@ -30,5 +34,8 @@
             product.price
         FROM (SELECT id,user_id,product_id,num FROM shop_cart WHERE user_id = #{userId})shop_cart_temp
         LEFT JOIN product ON shop_cart_temp.product_id = product.id
+    </select>
+    <select id="findShoppingCartByUserIdAndProductId" resultType="com.netease.kaola.entity.ShoppingCart" parameterType="map">
+        SELECT * FROM shop_cart WHERE user_id = #{userId} AND product_id = #{productId}
     </select>
 </mapper>

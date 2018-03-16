@@ -8,5 +8,5 @@ import com.google.gson.JsonArray;
 public interface OrderBiz {
     boolean buy(Long userId, Long productId, int amount);
 
-    boolean buyShoppingCart(Long id, JsonArray productIds, JsonArray nums);
+    boolean buyShoppingCart(Long id, JsonArray productIds, JsonArray nums, JsonArray shoppingCartIds);
 }

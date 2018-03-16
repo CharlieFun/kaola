@@ -17,8 +17,15 @@ public class ShoppingCartBizImpl implements ShoppingCartBiz {
     private ShoppingCartDao shoppingCartDao;
 
     @Override
-    public void add(ShoppingCart shoppingCart) {
-        shoppingCartDao.add(shoppingCart);
+    public void add(Long userId, Long productId, int num) {
+        ShoppingCart existShoppingCart = shoppingCartDao.findShoppingCartByUserIdAndProductId(userId, productId);
+        if (existShoppingCart == null) {
+            ShoppingCart shoppingCart = new ShoppingCart(userId, productId, num);
+            shoppingCartDao.add(shoppingCart);
+        } else {
+            int newNum = existShoppingCart.getNum() + num;
+            shoppingCartDao.updateNum(existShoppingCart.getId(), newNum);
+        }
     }
 
     @Override

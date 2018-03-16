@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.netease.kaola.dao.OrderDao;
 import com.netease.kaola.dao.OrderdetailDao;
 import com.netease.kaola.dao.ProductDao;
+import com.netease.kaola.dao.ShoppingCartDao;
 import com.netease.kaola.entity.Order;
 import com.netease.kaola.entity.Orderdetail;
 import com.netease.kaola.entity.Product;
@@ -30,6 +31,8 @@ public class OrderBizImpl implements OrderBiz {
     private OrderdetailDao orderdetailDao;
     @Autowired
     private ProductDao productDao;
+    @Autowired
+    private ShoppingCartDao shoppingCartDao;
 
     @Override
     public boolean buy(Long userId, Long productId, int amount) {
@@ -41,7 +44,7 @@ public class OrderBizImpl implements OrderBiz {
     }
 
     @Override
-    public boolean buyShoppingCart(Long userId, JsonArray productIds, JsonArray nums) {
+    public boolean buyShoppingCart(Long userId, JsonArray productIds, JsonArray nums, JsonArray shoppingCartIds) {
         Long orderId = addAndGetOrderId(userId);
         if (productIds.size() == 0 || nums.size() == 0) {
             LOGGER.error("商品ID Array或购买商品数量Array为空");
@@ -53,6 +56,8 @@ public class OrderBizImpl implements OrderBiz {
             Product product = productDao.getProductById(productId);
             Orderdetail orderdetail = new Orderdetail(orderId, productId, num, product.getPrice());
             orderdetailDao.add(orderdetail);
+            //从购物车中将该商品删除
+            shoppingCartDao.delete(shoppingCartIds.get(i).getAsLong());
         }
         return true;
     }

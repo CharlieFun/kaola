@@ -1,6 +1,7 @@
 package com.netease.kaola.dao;
 
 import com.netease.kaola.entity.ShoppingCart;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,4 +16,9 @@ public interface ShoppingCartDao {
     List<ShoppingCart> findShoppingCartByUserId(Long userId);
 
     void delete(Long id);
+
+    ShoppingCart findShoppingCartByUserIdAndProductId(@Param("userId") Long userId,
+                                                      @Param("productId") Long productId);
+
+    void updateNum(@Param("id") Long id, @Param("num") int num);
 }

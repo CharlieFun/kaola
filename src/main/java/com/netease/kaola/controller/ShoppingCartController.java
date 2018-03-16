@@ -44,8 +44,7 @@ public class ShoppingCartController {
         LOGGER.info("购物车，购买的商品ID是：{}", productId);
         LOGGER.info("购买数量是：{}", num);
         User currentUser = (User) session.getAttribute("currentUser");
-        ShoppingCart shoppingCart = new ShoppingCart(currentUser.getId(), productId, num);
-        shoppingCartBiz.add(shoppingCart);
+        shoppingCartBiz.add(currentUser.getId(), productId, num);
         LOGGER.info("加入购物车成功，商品ID:{}", productId);
         Map<String, Integer> map = new HashMap<>();
         map.put("code", 200);
@@ -54,7 +53,7 @@ public class ShoppingCartController {
 
     @ResponseBody
     @RequestMapping(value = "/getShoppingCarts", method = RequestMethod.GET)
-    public Map<String,Object> getShoppingCarts(@Param("userId")Long userId){
+    public Map<String, Object> getShoppingCarts(@Param("userId") Long userId) {
         List<ShoppingCart> shoppingCarts = shoppingCartBiz.findShoppingCartByUserId(userId);
         LOGGER.info("查询用户的ID:{}", userId);
         LOGGER.info("购物车的大小:{}", shoppingCarts.size());
@@ -62,12 +61,12 @@ public class ShoppingCartController {
         LOGGER.info("购物车的内容:{}", strShoppingCarts);
         Map<String, Object> map = new HashMap<>();
         map.put("code", 200);
-        map.put("result",strShoppingCarts);
+        map.put("result", strShoppingCarts);
         return map;
     }
 
     @RequestMapping("/delete")
-    public String delete(@Param("id")Long id){
+    public String delete(@Param("id") Long id) {
         shoppingCartBiz.delete(id);
         return "redirect:/shoppingCart";
     }

@@ -66,13 +66,15 @@ public class BuyerController {
     @RequestMapping(value = "/buyShoppingCart", method = RequestMethod.POST)
     public Map<String, Object> buyShoppingCart(@Param("strProductIds") String strProductIds,
                                                @Param("strNums") String strNums,
+                                               @Param("strShoppingCartIds") String strShoppingCartIds,
                                                HttpSession session) {
         LOGGER.info("购买商品ID Array:{}", strProductIds);
         LOGGER.info("购买商品数量 Array:{}", strNums);
         JsonArray productIds = parser.parse(strProductIds).getAsJsonArray();
         JsonArray nums = parser.parse(strNums).getAsJsonArray();
+        JsonArray shoppingCartIds = parser.parse(strShoppingCartIds).getAsJsonArray();
         User user = (User) session.getAttribute("currentUser");
-        boolean flag = orderBiz.buyShoppingCart(user.getId(), productIds, nums);
+        boolean flag = orderBiz.buyShoppingCart(user.getId(), productIds, nums, shoppingCartIds);
         Map<String, Object> map = new HashMap<>();
         if (flag) {
             map.put("code", 200);

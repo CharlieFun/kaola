@@ -8,7 +8,7 @@ import java.util.List;
  * Created by funstar on 2018/3/11.
  */
 public interface ShoppingCartBiz {
-    void add(ShoppingCart shoppingCart);
+    void add(Long userId, Long productId, int num);
 
     List<ShoppingCart> findShoppingCartByUserId(Long userId);
 
