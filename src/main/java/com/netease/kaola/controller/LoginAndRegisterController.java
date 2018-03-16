@@ -63,6 +63,7 @@ public class LoginAndRegisterController {
             String principal = (String) subject.getPrincipal();
             session.setAttribute("username", principal);
             User currentUser = userBiz.findByUsername(username);
+            //todo 前面没考虑好，只把username加入回话中，现在又直接加入了currentUser，回头只用currentUser
             session.setAttribute("currentUser", currentUser);
             if (subject.hasRole("seller")) {
                 return "redirect:/seller";

@@ -52,6 +52,20 @@ public class ShoppingCartController {
         return gson.toJson(map);
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getShoppingCarts", method = RequestMethod.GET)
+    public Map<String,Object> getShoppingCarts(@Param("userId")Long userId){
+        List<ShoppingCart> shoppingCarts = shoppingCartBiz.findShoppingCartByUserId(userId);
+        LOGGER.info("查询用户的ID:{}", userId);
+        LOGGER.info("购物车的大小:{}", shoppingCarts.size());
+        String strShoppingCarts = gson.toJson(shoppingCarts);
+        LOGGER.info("购物车的内容:{}", strShoppingCarts);
+        Map<String, Object> map = new HashMap<>();
+        map.put("code", 200);
+        map.put("result",strShoppingCarts);
+        return map;
+    }
+
     @RequestMapping("/delete")
     public String delete(@Param("id")Long id){
         shoppingCartBiz.delete(id);

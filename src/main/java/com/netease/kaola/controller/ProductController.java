@@ -49,7 +49,7 @@ public class ProductController {
         List<Product> products = productBiz.findAll();
         String username = (String) session.getAttribute("username");
         List<Orderdetail> orderdetails = orderdetailBiz.findAllOrderdetailsByUsername(username);
-        LOGGER.info("size:{}", orderdetails.size());
+        LOGGER.info("已购买商品数量:{}", orderdetails.size());
         Map<Long, Orderdetail> orderdetailMap = new HashMap<>();
         //默认值为0.0
         Double lastBuyPrice = 0.0;

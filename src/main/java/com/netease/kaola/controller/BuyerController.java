@@ -1,6 +1,10 @@
 package com.netease.kaola.controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
 import com.netease.kaola.entity.Order;
 import com.netease.kaola.entity.Orderdetail;
 import com.netease.kaola.entity.ShoppingCart;
@@ -17,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +34,7 @@ import java.util.Map;
 public class BuyerController {
     public static final Logger LOGGER = LoggerFactory.getLogger(BuyerController.class);
     private Gson gson = new Gson();
+    private JsonParser parser = new JsonParser();
     @Autowired
     private ProductBiz productBiz;
     @Autowired
@@ -53,6 +60,24 @@ public class BuyerController {
         }
         String res = gson.toJson(map);
         return res;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/buyShoppingCart", method = RequestMethod.POST)
+    public Map<String, Object> buyShoppingCart(@Param("strProductIds") String strProductIds,
+                                               @Param("strNums") String strNums,
+                                               HttpSession session) {
+        LOGGER.info("购买商品ID Array:{}", strProductIds);
+        LOGGER.info("购买商品数量 Array:{}", strNums);
+        JsonArray productIds = parser.parse(strProductIds).getAsJsonArray();
+        JsonArray nums = parser.parse(strNums).getAsJsonArray();
+        User user = (User) session.getAttribute("currentUser");
+        boolean flag = orderBiz.buyShoppingCart(user.getId(), productIds, nums);
+        Map<String, Object> map = new HashMap<>();
+        if (flag) {
+            map.put("code", 200);
+        }
+        return map;
     }
 
     @RequestMapping("/account")
