@@ -124,9 +124,21 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
 <script type="text/javascript">
     var loading = new Loading();
-    //    var $ = function (id) {
-    //        return document.getElementById(id);
-    //    };
+
+    //todo 全部勾选商品功能未实现，勾选后页面开始转圈，不知道是因为什么
+//    $('#selectAll').click(function () {
+//        if (this.checked) {
+//            console.log("我被勾选了");
+//            allShoppingCars = getShoppingCars();
+//            for (var i = 0; i < allShoppingCars.length; i++) {
+//                var checkBox = document.getElementById("checkbox" + allShoppingCars[i].productId);
+//                checkBox.checked = true;
+//            }
+//
+//        } else {
+//            console.log("我没有被勾选");
+//        }
+//    });
 
     function getShoppingCars() {
         judgeIsLogin();
