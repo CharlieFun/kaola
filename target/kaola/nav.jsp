@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>桂林电子科技大学教材订购系统</title>
+    <title>网易考拉海购</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="${pageContext.request.contextPath}/bower_components/bootstrap/dist/css/bootstrap.min.css"
@@ -52,7 +52,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">桂林电子科技大学教材订购系统</a>
+            <%--<a class="navbar-brand" href="#">网易考拉海购</a>--%>
+            <span class="navbar-brand">买家你好，${sessionScope.username}！</span>
         </div>
         <!-- /.navbar-header -->
 
@@ -62,9 +63,9 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="${pageContext.request.contextPath}/account.do/profile.view"><i
-                            class="fa fa-user fa-fw"></i> 用户设置</a>
-                    </li>
+                    <%--<li><a href="${pageContext.request.contextPath}/account.do/profile.view"><i--%>
+                            <%--class="fa fa-user fa-fw"></i> 用户设置</a>--%>
+                    <%--</li>--%>
 
                     <li class="divider"></li>
                     <li><a href="${pageContext.request.contextPath}/logout"><i
@@ -76,59 +77,6 @@
             <!-- /.dropdown -->
         </ul>
         <!-- /.navbar-top-links -->
-
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
-                    <li>
-                        <a href="${pageContext.request.contextPath}/main.do/admin"><i class="fa fa-book fa-fw"></i> 控制面板</a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/user.do/user.view"><i class="fa fa-book fa-fw"></i>
-                            用户管理</a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/role.do/role.view"><i class="fa fa-book fa-fw"></i>
-                            角色管理</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> 学院管理<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="/"> 整体概况</a>
-                            </li>
-                            <li>
-                                <a href="${pageContext.request.contextPath}/dept.do/dept.view"> 系部设置</a>
-                            </li>
-                            <li>
-                                <a href="${pageContext.request.contextPath}/spec.do/spec.view"> 专业设置</a>
-                            </li>
-                            <li>
-                                <a href="${pageContext.request.contextPath}/clazz.do/clazz.view"> 班级管理</a>
-                            </li>
-                            <li>
-                                <a href="${pageContext.request.contextPath}/course.do/course.view"> 添加课程</a>
-                            </li>
-                            <li>
-                                <a href="${pageContext.request.contextPath}/section.do/section.view"> 课程安排</a>
-                            </li>
-                            <li>
-                                <a href="${pageContext.request.contextPath}/student.do/student.view"> 学生管理</a>
-                            </li>
-                            <li>
-                                <a href="${pageContext.request.contextPath}/orderbook.do/orderbook_review.view/">
-                                    秘书审核</a>
-                            </li>
-
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-
-                </ul>
-            </div>
-            <!-- /.sidebar-collapse -->
-        </div>
-        <!-- /.navbar-static-side -->
     </nav>
 </div>
 </body>

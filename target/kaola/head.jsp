@@ -25,7 +25,7 @@
         </div>
         <ul class="nav">
             <li><a href="${cp}/product">首页</a></li>
-            <li><a href="${cp}/account">账务</a></li>
+            <li><a href="${cp}/account">财务</a></li>
             <shiro:hasRole name="seller">
                 <li><a href="./public.html">发布</a></li>
             </shiro:hasRole>
