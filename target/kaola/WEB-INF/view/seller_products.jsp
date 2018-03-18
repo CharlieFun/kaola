@@ -68,9 +68,16 @@
                                         <td>
                                             <a href="${pageContext.request.contextPath}/product/updateView?id=${product.id}"
                                                class="btn btn-primary" name="update">修改</a>
-                                            <a href="${pageContext.request.contextPath}/product/delete?id=${product.id}"
-                                               class="btn btn-danger" name="delete" id="${product.id}"
-                                               onclick="return confirm('是否要删除该商品？')">删除</a>
+                                            <c:choose>
+                                                <c:when test="${product.haveBuy}">
+                                                    <button class="btn btn-danger" disabled="disabled">删除</button>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <a href="${pageContext.request.contextPath}/product/delete?id=${product.id}"
+                                                       class="btn btn-danger" name="delete" id="${product.id}"
+                                                       onclick="return confirm('是否要删除该商品？')">删除</a>
+                                                </c:otherwise>
+                                            </c:choose>
                                         </td>
                                     </tr>
                                 </c:forEach>
