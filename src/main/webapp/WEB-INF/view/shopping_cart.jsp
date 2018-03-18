@@ -112,7 +112,7 @@
                         <%--<p class="allgoods">已选商品 <em class="num">1</em> 件 <span class="itm">总价(不含运费)：<em class="num">￥1059.00</em></span>--%>
                         <%--</p>--%>
                         <%--<p class="allmoney">活动优惠：-￥0.00<span class="itm">商品应付总计：￥1059.00</span><span class="itm">商品税费（不含运费税）：￥0.00</span></p>--%>
-                        <button type="button" id="confirmBuy" class="gobuy">去结算</button>
+                        <button type="button" id="confirmBuy" class="gobuy">结算</button>
                     </div>
                 </div>
             </div>
@@ -238,74 +238,5 @@
         if ("${currentUser.id}" == null || "${currentUser.id}" == undefined || "${currentUser.id}" == "") {
             window.location.href = "${cp}/login";
         }
-    }
-
-    //    function selectAllClick(){
-    //        $ = document.getElementById;
-    //
-    //    }
-
-    function addToShoppingRecordsPre(productsId, productsCounts) {
-        for (var i = 0; i < productsId.length; i++) {
-            addToShoppingRecords(productsId[i], productsCounts[i]);
-        }
-        layer.confirm('前往订单状态？', {icon: 1, title: '购买成功', btn: ['前往订单', '继续购买']},
-            function () {
-                window.location.href = "${cp}/shopping_record";
-            },
-            function (index) {
-                window.location.href = "${cp}/shopping_car";
-            }
-        );
-    }
-
-    function addToShoppingRecords(productId, productCounts) {
-        judgeIsLogin();
-        var shoppingRecord = {};
-        shoppingRecord.userId = ${currentUser.id};
-        shoppingRecord.productId = productId;
-        shoppingRecord.counts = productCounts;
-        var buyResult = "";
-        $.ajax({
-            async: false,
-            type: 'POST',
-            url: '${cp}/addShoppingRecord',
-            data: shoppingRecord,
-            dataType: 'json',
-            success: function (result) {
-                buyResult = result.result;
-            },
-            error: function (result) {
-                layer.alert('购买错误');
-            }
-        });
-        var product = getProductById(productId);
-        if (buyResult == "success") {
-            deleteShoppingCar(productId);
-            layer.msg("商品 " + product.name + " 购买成功", {icon: 1});
-        }
-        else if (buyResult == "unEnough") {
-            layer.alert("商品 " + product.name + " 库存不足，购买失败")
-        }
-    }
-
-    function deleteShoppingCar(productId) {
-        var shoppingCar = {};
-        shoppingCar.userId = ${currentUser.id};
-        shoppingCar.productId = productId;
-        var deleteResult = "";
-        $.ajax({
-            async: false,
-            type: 'POST',
-            url: '${cp}/deleteShoppingCar',
-            data: shoppingCar,
-            dataType: 'json',
-            success: function (result) {
-                deleteResult = result.result;
-            },
-            error: function (result) {
-                layer.alert('查询用户错误');
-            }
-        });
     }
 </script>

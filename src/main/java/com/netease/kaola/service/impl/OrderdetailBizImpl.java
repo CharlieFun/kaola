@@ -26,7 +26,7 @@ public class OrderdetailBizImpl implements OrderdetailBiz {
         Double account = 0.0;
         for (Orderdetail orderdetail : orderdetails) {
             if (orderdetail != null) {
-                account += orderdetail.getAmount() * orderdetail.getProduct().getPrice();
+                account += orderdetail.getAmount() * orderdetail.getCurrentPrice();
             }
         }
         return account;

@@ -26,7 +26,7 @@
             <th>内容名称</th>
             <th>购买时间</th>
             <th>购买数量</th>
-            <th>购买价格</th>
+            <th>购买时价格</th>
         </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@
             <td><h4><a href="${pageContext.request.contextPath}/product/show?id=${orderdetail.productId}">${orderdetail.product.title}</a></h4></td>
             <td><span class="v-time">${orderdetail.stringTime}</span></td>
             <td><span class="value">${orderdetail.amount}</span></td>
-            <td><span class="v-unit">¥</span><span class="value">${orderdetail.product.price}</span></td>
+            <td><span class="v-unit">¥</span><span class="value">${orderdetail.currentPrice}</span></td>
         </tr>
         </c:forEach>
         </tbody>
