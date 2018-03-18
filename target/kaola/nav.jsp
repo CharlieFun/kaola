@@ -53,7 +53,7 @@
                 <span class="icon-bar"></span>
             </button>
             <%--<a class="navbar-brand" href="#">网易考拉海购</a>--%>
-            <span class="navbar-brand">买家你好，${sessionScope.username}！</span>
+            <span class="navbar-brand">卖家你好，${sessionScope.username}！</span>
         </div>
         <!-- /.navbar-header -->
 

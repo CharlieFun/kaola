@@ -11,4 +11,7 @@ public interface OrderdetailBiz {
     List<Orderdetail> findAllOrderdetailsByUsername(String username);
 
     Double calculateAccount(List<Orderdetail> orderdetails);
+
+    //获取所有已经被购买的商品id和购买数量
+    List<Orderdetail> findAllHaveBuyProducts();
 }

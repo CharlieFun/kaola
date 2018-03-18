@@ -28,6 +28,8 @@
                                     <th>描述</th>
                                     <th>单价</th>
                                     <th>发布状态</th>
+                                    <th>售出状态</th>
+                                    <th>售出数量</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
@@ -42,7 +44,27 @@
                                         <td>${product.title}</td>
                                         <td>${product.summary}</td>
                                         <td>${product.price}</td>
-                                        <td>${product.status}</td>
+                                        <td>
+                                            <c:choose>
+                                                <c:when test="${product.status}">
+                                                    已发布
+                                                </c:when>
+                                                <c:otherwise>
+                                                    已下架
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </td>
+                                        <td>
+                                            <c:choose>
+                                                <c:when test="${product.haveBuy}">
+                                                    已售出
+                                                </c:when>
+                                                <c:otherwise>
+                                                    未售出
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </td>
+                                        <td>${product.totalBuyNum}</td>
                                         <td>
                                             <a href="${pageContext.request.contextPath}/product/updateView?id=${product.id}"
                                                class="btn btn-primary" name="update">修改</a>

@@ -13,4 +13,6 @@ public interface OrderdetailDao {
     void add(Orderdetail orderdetail);
 
     List<Orderdetail> findAllOrderdetailsByUsername(String username);
+
+    List<Orderdetail> findAllHaveBuyProducts();
 }

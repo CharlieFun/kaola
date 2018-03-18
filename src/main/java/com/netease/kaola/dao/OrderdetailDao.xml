@@ -39,4 +39,9 @@
             LEFT JOIN product ON orderdetail.product_id = product.id
         ORDER BY orders.createtime
     </select>
+
+    <select id="findAllHaveBuyProducts" resultMap="orderdetailMap">
+        SELECT id, product_id, amount FROM orderdetail
+    </select>
+
 </mapper>

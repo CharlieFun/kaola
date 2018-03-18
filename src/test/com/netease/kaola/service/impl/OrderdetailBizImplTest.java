@@ -43,4 +43,13 @@ public class OrderdetailBizImplTest {
         System.out.println(products.get(0));
     }
 
+    @Test
+    public void findAllHaveBuyProducts(){
+        List<Orderdetail> orderdetails = orderdetailBiz.findAllHaveBuyProducts();
+        assertEquals(11,orderdetails.size());
+        for (Orderdetail orderdetail:orderdetails){
+            System.out.println(orderdetail.getProductId()+" :"+orderdetail.getAmount());
+        }
+    }
+
 }

@@ -19,6 +19,10 @@ public class Product {
     private boolean status;
     //上次购买的价格，这是根据不同用户ID进行查询的
     private Double lastBuyPrice = 0.0;
+    //是否被购买，由seller查看
+    private boolean haveBuy = false;
+    //被购买的总数量
+    private int totalBuyNum = 0;
 
     public Long getId() {
         return id;
@@ -82,6 +86,22 @@ public class Product {
 
     public void setLastBuyPrice(Double lastBuyPrice) {
         this.lastBuyPrice = lastBuyPrice;
+    }
+
+    public boolean isHaveBuy() {
+        return haveBuy;
+    }
+
+    public void setHaveBuy(boolean haveBuy) {
+        this.haveBuy = haveBuy;
+    }
+
+    public int getTotalBuyNum() {
+        return totalBuyNum;
+    }
+
+    public void setTotalBuyNum(int totalBuyNum) {
+        this.totalBuyNum = totalBuyNum;
     }
 
     @Override

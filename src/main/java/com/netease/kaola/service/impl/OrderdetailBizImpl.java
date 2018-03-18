@@ -31,4 +31,9 @@ public class OrderdetailBizImpl implements OrderdetailBiz {
         }
         return account;
     }
+
+    @Override
+    public List<Orderdetail> findAllHaveBuyProducts() {
+        return orderdetailDao.findAllHaveBuyProducts();
+    }
 }
