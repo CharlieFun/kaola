@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ebb95d-5bad-4c47-a16f-71c1b256e22e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/buyer_products.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/buyer_products.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/product_add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/product_add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/product_update.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/product_update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/dist/css/ui.css" afterPath="$PROJECT_DIR$/src/main/webapp/dist/css/ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/nav.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/nav.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/netease/kaola/common/Test.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/kaola/WEB-INF/classes/com/netease/kaola/common/Test.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,20 +46,6 @@
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="users" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="kaola@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="roles" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -136,65 +120,99 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="product_update.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/product_update.jsp">
+      <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="70" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="70" />
+            <state relative-caret-position="433">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_show.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/product_show.jsp">
+      <file leaf-file-name="LoginAndRegisterController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/LoginAndRegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="44" column="4" lean-forward="false" selection-start-line="44" selection-start-column="4" selection-end-line="46" selection-end-column="6" />
+            <state relative-caret-position="390">
+              <caret line="84" column="39" lean-forward="true" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pageShow.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/pageShow.js">
+      <file leaf-file-name="UserBizImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/UserBizImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            <state relative-caret-position="-34">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buyer_products.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/buyer_products.jsp">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5076e59c-5716-4c16-9085-6ae097383f1b/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+            <state relative-caret-position="0">
+              <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="seller_products.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/seller_products.jsp">
+      <file leaf-file-name="UserBiz.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/UserBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="111">
+              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BuyerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShoppingCartDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="20" column="57" lean-forward="false" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+              <folding>
+                <marker date="1521177272076" expanded="true" signature="833:922" ph="INSERT INTO shop_cart... " />
+                <marker date="1521177272076" expanded="true" signature="994:1044" ph="UPDATE shop_... " />
+                <marker date="1521177272076" expanded="true" signature="1114:1152" ph="DELETE FROM " />
+                <marker date="1521177272076" expanded="true" signature="1268:1620" ph="SELECT shop_... user_id" />
+                <marker date="1521177272076" expanded="true" signature="1464:1537" ph="SELECT user_... shop_cart" />
+                <marker date="1521177272076" expanded="true" signature="1769:1848" ph="SELECT * FRO... shop_cart" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SellerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/SellerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/nav.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="799">
               <caret line="65" column="60" lean-forward="false" selection-start-line="65" selection-start-column="60" selection-end-line="65" selection-end-column="60" />
               <folding />
             </state>
@@ -206,16 +224,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="417">
               <caret line="40" column="1" lean-forward="false" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/head.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -307,7 +315,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/OrderdetailDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/SellerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netease/kaola/entity/Product.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5076e59c-5716-4c16-9085-6ae097383f1b/console.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/seller_products.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/editSubmit.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shopping_cart.jsp" />
@@ -319,6 +326,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/buyer_products.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/dist/css/ui.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/nav.jsp" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5076e59c-5716-4c16-9085-6ae097383f1b/console.sql" />
       </list>
     </option>
   </component>
@@ -1577,7 +1585,7 @@
       <workItem from="1519800396755" duration="1867000" />
       <workItem from="1520219510918" duration="13310000" />
       <workItem from="1520327259416" duration="55988000" />
-      <workItem from="1521087860221" duration="41195000" />
+      <workItem from="1521087860221" duration="42036000" />
     </task>
     <servers />
   </component>
@@ -1614,7 +1622,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204773000" />
+    <option name="totallyTimeSpent" value="205614000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1627,7 +1635,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-145" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1649,10 +1657,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34059405" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34059405" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1980198" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1980198" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.49676898" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17891374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1701,38 +1709,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.6/gson-2.6.jar!/com/google/gson/Gson.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="465" column="17" lean-forward="false" selection-start-line="465" selection-start-column="17" selection-end-line="465" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/UserBizImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/RoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1784,21 +1760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="20" column="57" lean-forward="false" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
-          <folding>
-            <marker date="1521177272076" expanded="true" signature="833:922" ph="INSERT INTO shop_cart... " />
-            <marker date="1521177272076" expanded="true" signature="994:1044" ph="UPDATE shop_... " />
-            <marker date="1521177272076" expanded="true" signature="1114:1152" ph="DELETE FROM " />
-            <marker date="1521177272076" expanded="true" signature="1268:1620" ph="SELECT shop_... user_id" />
-            <marker date="1521177272076" expanded="true" signature="1464:1537" ph="SELECT user_... shop_cart" />
-            <marker date="1521177272076" expanded="true" signature="1769:1848" ph="SELECT * FRO... shop_cart" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/ShoppingCartBizImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1819,14 +1780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/SellerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1852,16 +1805,6 @@
         <state relative-caret-position="629">
           <caret line="50" column="86" lean-forward="false" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1905,14 +1848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/LoginAndRegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="65" column="74" lean-forward="false" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/OrderBiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1936,14 +1871,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1971,19 +1898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/OrderdetailDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding>
-            <marker date="1521357100153" expanded="true" signature="962:1101" ph="INSERT INTO orderdetail... " />
-            <marker date="1521357100153" expanded="true" signature="1223:1855" ph="SELECT order... id" />
-            <marker date="1521357100153" expanded="true" signature="1495:1618" ph="SELECT id,us... users" />
-            <marker date="1521357100153" expanded="true" signature="1947:1993" ph="SELECT id, p... orderdetail" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/account.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1996,14 +1910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-119">
           <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5076e59c-5716-4c16-9085-6ae097383f1b/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="45" lean-forward="true" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -2153,8 +2059,112 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/nav.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="799">
           <caret line="65" column="60" lean-forward="false" selection-start-line="65" selection-start-column="60" selection-end-line="65" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/SellerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/common/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/LoginAndRegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="84" column="39" lean-forward="true" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/UserBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/service/impl/UserBizImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/OrderDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520526921995" expanded="true" signature="548:622" ph="INSERT INTO orders... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/OrderdetailDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <folding>
+            <marker date="1521357100153" expanded="true" signature="962:1101" ph="INSERT INTO orderdetail... " />
+            <marker date="1521357100153" expanded="true" signature="1223:1855" ph="SELECT order... id" />
+            <marker date="1521357100153" expanded="true" signature="1495:1618" ph="SELECT id,us... users" />
+            <marker date="1521357100153" expanded="true" signature="1947:1993" ph="SELECT id, p... orderdetail" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/BuyerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/dao/ShoppingCartDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="20" column="57" lean-forward="false" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+          <folding>
+            <marker date="1521177272076" expanded="true" signature="833:922" ph="INSERT INTO shop_cart... " />
+            <marker date="1521177272076" expanded="true" signature="994:1044" ph="UPDATE shop_... " />
+            <marker date="1521177272076" expanded="true" signature="1114:1152" ph="DELETE FROM " />
+            <marker date="1521177272076" expanded="true" signature="1268:1620" ph="SELECT shop_... user_id" />
+            <marker date="1521177272076" expanded="true" signature="1464:1537" ph="SELECT user_... shop_cart" />
+            <marker date="1521177272076" expanded="true" signature="1769:1848" ph="SELECT * FRO... shop_cart" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netease/kaola/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5076e59c-5716-4c16-9085-6ae097383f1b/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
           <folding />
         </state>
       </provider>
