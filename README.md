@@ -29,13 +29,13 @@ Json: Gson
 
 3)使用Intellij Idea导入项目,之后配置项目启动方式,使用刚才下载好的Tomcat
   
-4)运行dfjdsk
+4)运行
 
 # 使用简介:
 
 1.权限介绍:
 
-根据导入的shiro.sql,运行网站sdf初始时会存在两个权限角色:
+根据导入的shiro.sql,运行网站初始时会存在两个权限角色:
 
 1)买家,账号为buyer，密码为reyub
 
