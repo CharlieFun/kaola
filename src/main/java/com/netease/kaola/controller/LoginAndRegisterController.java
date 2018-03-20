@@ -96,4 +96,9 @@ public class LoginAndRegisterController {
         model.addAttribute("msg", "您已经退出登录");
         return "/login";
     }
+
+    @RequestMapping("/unauthorized")
+    public String unauthorized(){
+        return "/unauthorized";
+    }
 }

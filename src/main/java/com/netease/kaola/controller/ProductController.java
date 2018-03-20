@@ -7,6 +7,7 @@ import com.netease.kaola.service.OrderdetailBiz;
 import com.netease.kaola.service.ProductBiz;
 import org.apache.ibatis.annotations.Param;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,6 +45,7 @@ public class ProductController {
     @Autowired
     private OrderdetailBiz orderdetailBiz;
 
+    @RequiresRoles("buyer")
     @RequestMapping("")
     public String showProducts(HttpSession session, Model model) {
         List<Product> products = productBiz.findAll();
@@ -72,6 +74,7 @@ public class ProductController {
         return "buyer_products";
     }
 
+    @RequiresRoles("buyer")
     @RequestMapping("notBuy")
     public String notBuy(HttpSession session, Model model){
         List<Product> products = productBiz.findAll();
@@ -99,12 +102,13 @@ public class ProductController {
         return "buyer_products";
     }
 
-
+    @RequiresRoles("seller")
     @RequestMapping("/addView")
     public String addView() {
         return "/product_add";
     }
 
+    @RequiresRoles("seller")
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String add(Product product, MultipartFile file, HttpServletRequest request) {
 //        String path = request.getSession().getServletContext().getRealPath("/img");
@@ -115,12 +119,14 @@ public class ProductController {
         return "redirect:/seller";
     }
 
+    @RequiresRoles("seller")
     @RequestMapping("/updateView")
     public String updateView(@Param("id") Long id, Model model) {
         model.addAttribute("product", productBiz.getProductById(id));
         return "product_update";
     }
 
+    @RequiresRoles("seller")
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(Product product, MultipartFile file) {
         LOGGER.info(product.toString());
@@ -128,13 +134,14 @@ public class ProductController {
         return "redirect:/seller";
     }
 
+    @RequiresRoles("seller")
     @RequestMapping("/delete")
     public String delete(@Param("id") Long id) {
         productBiz.delete(id);
         return "redirect:/seller";
     }
 
-    //todo 加一个参数，上次购买价格
+    @RequiresRoles("buyer")
     @RequestMapping("/show")
     public String showProduct(@Param("id") Long id, @Param("lastBuyPrice") Double lastBuyPrice, Model model) {
         Product product = productBiz.getProductById(id);

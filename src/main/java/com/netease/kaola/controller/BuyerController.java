@@ -11,6 +11,7 @@ import com.netease.kaola.entity.ShoppingCart;
 import com.netease.kaola.entity.User;
 import com.netease.kaola.service.*;
 import org.apache.ibatis.annotations.Param;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +83,7 @@ public class BuyerController {
         return map;
     }
 
+    @RequiresRoles("buyer")
     @RequestMapping("/account")
     public String showAccount(HttpSession session, Model model) {
         String username = (String) session.getAttribute("username");

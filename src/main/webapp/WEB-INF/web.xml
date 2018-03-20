@@ -80,4 +80,10 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <!--没有权限的界面-->
+    <error-page>
+        <exception-type>org.apache.shiro.authz.UnauthorizedException</exception-type>
+        <location>/WEB-INF/view/unauthorized.jsp</location>
+    </error-page>
+
 </web-app>

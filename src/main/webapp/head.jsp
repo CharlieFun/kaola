@@ -21,7 +21,7 @@
 <div class="n-head">
     <div class="g-doc f-cb">
         <div class="user">
-            买家你好，<span class="name">${sessionScope.username}</span>！<a href="${cp}/logout">[退出]</a>
+            买家<span class="name">${sessionScope.username}</span>，您好！<a href="${cp}/logout">[退出]</a>
         </div>
         <ul class="nav">
             <li><a href="${cp}/product">首页</a></li>
