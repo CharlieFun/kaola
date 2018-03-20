@@ -38,16 +38,6 @@
                     </li>
                 </c:if>
             </c:forEach>
-            <%--<li id="p-3">--%>
-            <%--<a href="./show.html" class="link">--%>
-            <%--<div class="img"><img src="http://nec.netease.com/img/s/1.jpg" alt=""></div>--%>
-            <%--<h3>内容</h3>--%>
-            <%--<div class="price"><span class="v-unit">¥</span><span class="v-value">123.9</span></div>--%>
-            <%--</a>--%>
-            <%--<span class="u-btn u-btn-normal u-btn-xs del" data-del="3">删除</span>--%>
-            <%--</li>--%>
-
-
         </ul>
     </div>
 </div>

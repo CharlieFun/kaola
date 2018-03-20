@@ -56,17 +56,15 @@
             <span class="navbar-brand">卖家你好，${sessionScope.username}！</span>
         </div>
         <!-- /.navbar-header -->
-
         <ul class="nav navbar-top-links navbar-right">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <%--<li><a href="${pageContext.request.contextPath}/account.do/profile.view"><i--%>
-                            <%--class="fa fa-user fa-fw"></i> 用户设置</a>--%>
-                    <%--</li>--%>
-
+                    <li><a href="${pageContext.request.contextPath}/seller"><i
+                            class="fa fa-user fa-fw"></i> 首页</a>
+                    </li>
                     <li class="divider"></li>
                     <li><a href="${pageContext.request.contextPath}/logout"><i
                             class="fa fa-sign-out fa-fw"></i> 退出</a>

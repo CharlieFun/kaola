@@ -35,7 +35,11 @@
                                     <span id="summaryCheck" style="color:#d22147"></span>
                                 </div>
                                 <label>商品价格</label>
-                                <input class="form-control" name="price" value="${product.price}">
+                                <div>
+                                    <input onkeyup="checkLength(this)" class="form-control" name="price"
+                                           value="${product.price}">
+                                    <span id="priceCheck" style="color:#d22147"></span>
+                                </div>
                                 <label>详细描述</label>
                                 <div>
                                     <textarea onkeyup="checkLength(this)" class="form-control"
@@ -91,11 +95,17 @@
             } else {
                 $('summaryCheck').innerHTML = null;
             }
-        }else{
+        } else if (c.getAttribute('name') == 'detail') {
             if (c.value.length < 2 || c.value.length > 1000) {
                 $('detailCheck').innerHTML = "商品详细描述长度在[2,1000]字符内";
             } else {
                 $('detailCheck').innerHTML = null;
+            }
+        } else {
+            if (c.value === "" || c.value == null || isNaN(c.value)) {
+                $('priceCheck').innerHTML = "商品价格不是数字";
+            } else {
+                $('priceCheck').innerHTML = null;
             }
         }
     }
