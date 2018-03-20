@@ -23,13 +23,25 @@
                                   enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="${product.id}">
                                 <label>商品标题</label>
-                                <input class="form-control" name="title" value="${product.title}">
+                                <div>
+                                    <input onkeyup="checkLength(this)" class="form-control" name="title"
+                                           value="${product.title}">
+                                    <span id="titleCheck" style="color:#d22147"></span>
+                                </div>
                                 <label>商品简介</label>
-                                <input class="form-control" name="summary" value="${product.summary}">
+                                <div>
+                                    <input onkeyup="checkLength(this)" class="form-control" name="summary"
+                                           value="${product.summary}">
+                                    <span id="summaryCheck" style="color:#d22147"></span>
+                                </div>
                                 <label>商品价格</label>
                                 <input class="form-control" name="price" value="${product.price}">
                                 <label>详细描述</label>
-                                <textarea class="form-control" name="detail">${product.detail}</textarea>
+                                <div>
+                                    <textarea onkeyup="checkLength(this)" class="form-control"
+                                              name="detail">${product.detail}</textarea>
+                                    <span id="detailCheck" style="color:#d22147"></span>
+                                </div>
                                 <label>上架状态</label>
                                 <select name="status" class="form-control">
                                     <option value="true" selected>上架</option>
@@ -60,3 +72,31 @@
 </div>
 <!-- /#wrapper -->
 <jsp:include page="/bottom.jsp"></jsp:include>
+<script type="text/javascript">
+    var $ = function (id) {
+        return document.getElementById(id);
+    };
+
+    function checkLength(c) {
+        if (c.getAttribute('name') == 'title') {
+            if (c.value.length < 2 || c.value.length > 80) {
+                $('titleCheck').innerHTML = "商品标题长度在[2,80]字符内";
+            } else {
+                $('titleCheck').innerHTML = null;
+            }
+        }
+        else if (c.getAttribute('name') == 'summary') {
+            if (c.value.length < 2 || c.value.length > 140) {
+                $('summaryCheck').innerHTML = "商品简介长度在[2,140]字符内";
+            } else {
+                $('summaryCheck').innerHTML = null;
+            }
+        }else{
+            if (c.value.length < 2 || c.value.length > 1000) {
+                $('detailCheck').innerHTML = "商品详细描述长度在[2,1000]字符内";
+            } else {
+                $('detailCheck').innerHTML = null;
+            }
+        }
+    }
+</script>

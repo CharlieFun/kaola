@@ -28,7 +28,6 @@
                                 <label>商品价格</label>
                                 <input class="form-control" name="price">
                                 <label>详细描述</label>
-                                <%--<input class="form-control" name="detail">--%>
                                 <textarea class="form-control" name="detail"></textarea>
                                 <label>添加照片</label>
                                 <input name="file" type="file">
