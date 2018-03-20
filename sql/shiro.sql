@@ -43,3 +43,12 @@ create table roles_permissions (
   permission_id bigint,
   constraint pk_roles_permissions primary key(role_id, permission_id)
 ) charset=utf8 ENGINE=InnoDB;
+
+INSERT INTO roles(role, description, available) VALUES ('seller','卖家',1);
+INSERT INTO roles(role, description, available) VALUES ('buyer','买家',1);
+
+INSERT INTO users(username, password, salt) VALUES ('seller','f6850fabef4b640af6b30612b2e14572','4574bd5d452fef013014d56b41606f54',0);
+INSERT INTO users(username, password, salt) VALUES ('buyer','1603f3fc702a69e1d05498b20461b311','bd04568cdcab96b5ec54e766d9cdd0aa',0);
+
+INSERT INTO users_roles(user_id, role_id) VALUES (1,1);
+INSERT INTO users_roles(user_id, role_id) VALUES (2,2);
